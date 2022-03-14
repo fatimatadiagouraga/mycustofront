@@ -1,0 +1,50 @@
+<mat-toolbar >
+  <button mat-icon-button *ngIf="sidenav.mode==='over'" (click)="sidenav.toggle()">
+    <mat-icon *ngIf="!sidenav.opened">
+      menu
+    </mat-icon>
+  
+    <mat-icon *ngIf="sidenav.opened">
+      close
+    </mat-icon>
+  </button>
+  <img src="..\assets\images\LOGO.png" alt="" srcset="" style="height: 130px;width: 160px;">
+  
+  MY CUSTO
+</mat-toolbar>
+<mat-sidenav-container ><br>
+  <mat-sidenav class="bg-warning" #sidenav="matSidenav">
+    <img src="assets/images/images.jpg" alt="" style="height: 60PX;width: 60px;">
+    <h4 class="name">{{user.prenom}} {{user.nom}}</h4><br>
+
+    <mat-divider style="margin-top: 60px;"></mat-divider><br>
+    
+    <button mat-button class="menu-button" routerLink="/listAdmin" *ngIf="user.profil==='admin'">
+      <img src="..\assets\images\admin.png" alt="" srcset="" style="height: 40PX;width: 40px;">
+      <span>  GESTION DES ADMINS</span>
+    </button>
+    <button mat-button class="menu-button" routerLink="/commande" *ngIf="user.profil==='admin'">
+      <img src="..\assets\images\commande.png" alt="" srcset="" style="height: 40PX;width: 40px;">
+      <span>  GESTION DES COMMANDES</span>
+    </button>
+    <button mat-button class="menu-button" routerLink="/menu">
+      <img src="..\assets\images\menu.png" alt="" srcset="" style="height: 40PX;width: 40px;">
+      <span>GESTION DES MENUS</span>
+    </button>
+    <button mat-button class="menu-button" routerLink="/plat">
+      <img src="..\assets\images\plat.png" alt="" srcset="" style="height: 40PX;width: 40px;">
+      <span>GESTION DES PLATS</span>
+    </button> 
+    <button mat-button class="menu-button">
+      <img src="..\assets\images\off.png" alt="" srcset="" style="height: 40PX;width: 40px;">
+      <span style="color: red;">Deconnexion</span>
+    </button>   
+  </mat-sidenav>
+  <mat-sidenav-content>
+    <div class="content mat-elevation-z4">
+      <router-outlet></router-outlet>
+    </div>
+  </mat-sidenav-content>
+</mat-sidenav-container> 
+  
+  

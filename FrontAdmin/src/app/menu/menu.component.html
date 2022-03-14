@@ -1,0 +1,30 @@
+
+<body>
+    <div style="padding-top: 30px;">
+      <mat-icon class="plus" routerLink="/ajoutMenu">add_circle_outline</mat-icon>  
+      <h1 style="text-align: center;font-weight: bold;">Liste des menus</h1> 
+    </div>
+
+    <div class="container" >
+      <div class="row" >
+          <mat-card class="col-md-4" *ngFor="let menu of menus">
+                <p class="icon">
+                    <mat-icon style="color: orange;" (click)="menuparid(menu.id_menu)">create</mat-icon><br>
+                    <mat-icon style="color: red;" (click)="supmenu(menu.id_menu)">delete</mat-icon>
+                </p>
+                <!-- <img src="#" alt="" srcset="" style="width: 50px;height: 50px;"> -->
+                <h2 style="font-weight: bold;color:orange  ;text-align: center;text-decoration: underline 4px rgb(252, 250, 249);">{{menu.nom_menu}}</h2>   
+                <h3>{{menu.menujour}}</h3>            
+                <p>{{menu.description_menu}}</p>  
+                            
+
+
+          </mat-card>        
+      </div>
+    </div>
+    
+</body>
+   
+    
+   
+

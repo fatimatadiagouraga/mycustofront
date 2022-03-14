@@ -1,0 +1,49 @@
+<mat-card style="background-color: rgb(193, 196, 196);border-radius: 30px;margin-top: 5%;">
+    <div>
+        <h1 style="text-align: center;color: black;font-weight: bold;">Modification Plat</h1>
+        <form  class="form" #data="ngForm" (onSubmit)="modifmenu(data)">
+            <div>
+                <label for=""></label>
+               <input type="text" placeholder="Nom_menu" ngModel name="nom_menu" [(ngModel)]="menu.nom_menu" style="color: black;">
+            </div>
+            <div>
+                <label for=""></label>
+               <input type="text" placeholder="Description" ngModel name="description_menu" [(ngModel)]="menu.description_menu" style="color: black;">
+            </div>
+            <div>
+                <select name="menujour" name="menujour" ngModel  [(ngModel)]="menu.menujour" style="color:black;">
+                    <option  value="">--Choisir un jour--</option>
+                    <option value="Lundi">Lundi</option>                  
+                    <option value="Mardi">Mardi</option>                  
+                    <option value="Mercredi">Mercredi</option>                  
+                    <option value="Jeudi">Jeudi</option>                  
+                    <option value="Vendredi">Vendredi</option>                  
+                    <option value="Samedi">Samedi</option>                  
+                    <option value="Dimanche">Dimanche</option>                  
+                </select> 
+            </div>
+            
+            
+            
+            <!-- <div>
+                <label for=""></label>
+                <input type="text" value="">
+            </div><div>
+                <label for=""></label>
+                <input type="text" value="">
+            </div><div>
+                <label for=""></label>
+                <input type="text" value="">
+            </div><div>
+                <label for=""></label>
+                <input type="text" value="">
+            </div> -->
+            <div>
+                
+                <button type="submit" style="background-color: black; padding: 10px 20px;margin: 20px 120px;">Modifier</button>
+            </div>
+        </form>
+
+    </div>    
+    
+</mat-card>

@@ -1,0 +1,28 @@
+<mat-card style="background-color: rgb(193, 196, 196);border-radius: 30px;">
+    <div>
+        <h1 style="text-align: center;color: black;font-weight: bold;">Modification Plat</h1>
+        <form [formGroup]="monPlat" (submit)="modifplat()" class="form">
+            <div>
+                <label for="">Nom</label>
+                <input type="text" formControlName="nom_plat">
+            </div>
+            <div>
+                <label for="">Prix</label>
+                <input type="text" formControlName="prix_plat">
+            </div>
+            <div>
+                <label for="">Description</label>
+                <input type="text" formControlName="description">
+            </div>
+            <!-- <div>
+                <label for="">Image</label>
+                <input type="file" formControlName="image">
+            </div> -->
+            <div>
+                
+                <button type="submit" style="background-color: black; padding: 10px 20px;margin: 20px 120px;">Modifier</button>
+            </div>
+        </form>
+    </div>    
+    
+</mat-card>

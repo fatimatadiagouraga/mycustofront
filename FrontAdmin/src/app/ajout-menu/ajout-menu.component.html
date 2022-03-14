@@ -1,0 +1,31 @@
+<mat-card style="background-color: rgb(255, 255, 255);border-radius: 30px;margin: 100px 50px;">
+    <div>
+        <h1 style="text-align: center;color: black;font-weight: bold;">Ajouter Menu</h1>
+        <form  #datamenus="ngForm"  (ngSubmit)="ajoutmenu(datamenus)"
+        class="form" >
+               
+                <input type="text" placeholder="NomMenu" name="nom_menu" ngModel>
+            
+                <input type="text" placeholder="Description" name="description_menu" ngModel>
+           
+                <label >Choisir Jour:</label>
+                <select name="menujour" name="menujour" style="color: black;padding: 20px;" class="jour" ngModel>
+                    <option  value="">--Choisir un jour--</option>
+                    <option value="Lundi">Lundi</option>                  
+                    <option value="Mardi">Mardi</option>                  
+                    <option value="Mercredi">Mercredi</option>                  
+                    <option value="Jeudi">Jeudi</option>                  
+                    <option value="Vendredi">Vendredi</option>                  
+                    <option value="Samedi">Samedi</option>                  
+                    <option value="Dimanche">Dimanche</option> 
+                                     
+                </select> 
+            <button type="submit">Ajouter</button>
+            <div>
+                
+              
+            </div>
+        </form>
+    </div>  
+</mat-card>
+
