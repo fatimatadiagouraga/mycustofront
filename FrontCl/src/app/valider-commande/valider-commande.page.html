@@ -1,0 +1,31 @@
+<ion-header>
+  <ion-toolbar>
+    <ion-title>valider Commande</ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content>
+<ion-img src="../assets/Images/validation.jpg" style="height: 200px;"></ion-img>
+<form action="">
+    <ion-label>moyen de payement</ion-label>
+    <ion-select color="black">
+      <ion-select-option value="Orange Money">Orange Money</ion-select-option>
+      <ion-select-option value="Visas">visas</ion-select-option>
+      <ion-select-option value="Paypal">Paypal</ion-select-option>
+    </ion-select>
+  <ion-item color="black">
+    <ion-label position="floating" placehorder="entrer les coordonnées">Cordonnées</ion-label>
+    <ion-input type="text"></ion-input>
+  </ion-item>
+</form>
+<br>
+<br>
+<div class="flex">
+  <ion-button  shape="round" class="annuler" color="black" [routerLink]="['/plat-details']">
+    Annuler
+  </ion-button>
+  <ion-button  shape="round" class="valider" color="black" [routerLink]="['/valider-commande']" (click)="presentToast()">
+    Confirmer
+  </ion-button>
+</div>
+</ion-content>

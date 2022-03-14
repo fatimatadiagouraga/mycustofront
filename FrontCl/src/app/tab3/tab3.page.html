@@ -1,0 +1,36 @@
+<ion-header [translucent]="true">
+  <ion-toolbar>
+    <ion-title>
+      Mon Panier
+    </ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content >
+  <ion-header>
+    <div style="position:fixed;width: 100%;background-color: black;">
+      <ion-button color="success" type="submit" style="margin-left: 50px;" (click)="ajoutCommande()">Commander</ion-button>
+    </div>
+  </ion-header>
+ 
+    
+  <span>
+    <div class="unecommande">
+      <ion-card *ngFor="let p of panierList" style="margin: 60px 40px;background-color: rgb(240, 174, 51);"> 
+        <div style="display: flex;">
+          <ion-icon name="close-outline" style="color: red;height: 50px;width: 30px;margin-left: 120px;"></ion-icon>
+
+        </div>
+               
+          <ion-img src="{{image}} {{p.plat.id_plat}}" style="height:50%;width: 95%;margin: 5px 5px;" class="ingredient"></ion-img>
+        <div class="nom" style="color: black;font-weight: bold;text-align: center;font-size: large;margin-top: 10px;">
+          {{p.plat.nom_plat}} 
+        </div>
+        <div class="nom" style="color: black;font-weight: bold;text-align: center;font-size: large;margin-top: 10px;">
+          {{p.plat.prix_plat}} FCFA
+        </div>
+        <p></p>  
+      </ion-card>
+    </div>
+  </span>
+</ion-content>

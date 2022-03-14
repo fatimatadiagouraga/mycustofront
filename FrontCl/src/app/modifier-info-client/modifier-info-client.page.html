@@ -1,0 +1,44 @@
+<ion-header>
+  <ion-toolbar>
+    <ion-title>Modifier ses informations</ion-title>
+  </ion-toolbar>
+</ion-header>
+<ion-content>
+  <form action="">
+      <ion-item>
+        <ion-label position="floating">Nom</ion-label>
+        <ion-input class="input1" type="text"></ion-input>
+      </ion-item>
+      <ion-item>
+        <ion-label position="floating">Prenom</ion-label>
+        <ion-input type="text"></ion-input>
+      </ion-item>
+      <ion-item>
+        <ion-label position="floating">Email</ion-label>
+        <ion-input type="email"></ion-input>
+      </ion-item>
+      <ion-item>
+        <ion-label position="floating">Tel</ion-label>
+        <ion-input type="number"></ion-input>
+      </ion-item>
+      <ion-item>
+        <ion-label position="floating">Mot de passe</ion-label>
+        <ion-input type="password"></ion-input>
+      </ion-item>
+      <ion-item>
+        <ion-label position="floating">Adresse</ion-label>
+        <ion-input type="text"></ion-input>
+      </ion-item>
+      <ion-item>
+        <ion-label position="floating">Numero Carte</ion-label>
+        <ion-input type="number"></ion-input>
+      </ion-item>
+  </form>
+  <ion-button  shape="round" class="annuler" color="black" [routerLink]="['/profil']"  >
+    Annuler
+  </ion-button>
+  <ion-button  shape="round" class="valider" color="black" [routerLink]="['/profil']">
+    Enregister
+  </ion-button>
+</ion-content>
+

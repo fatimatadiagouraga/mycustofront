@@ -1,0 +1,11 @@
+{
+  "name": "FrontCl",
+  "integrations": {},
+  "type": "angular",
+  "proxies": [
+    {
+      "path": "/endpoints",
+      "proxyUrl": "http://localhost:8100"
+    }
+      ]
+}
