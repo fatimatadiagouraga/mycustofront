@@ -10,14 +10,7 @@ const routes: Routes = [
     path: '',
     loadChildren: () => import('./accueil/accueil.module').then( m => m.AccueilPageModule)
   },
-  {
-    path: 'panier',
-    loadChildren: () => import('./panier/panier.module').then( m => m.PanierPageModule)
-  },
-  {
-    path: 'categorie',
-    loadChildren: () => import('./categorie/categorie.module').then( m => m.CategoriePageModule)
-  },
+  
   {
     path: 'profil',
     loadChildren: () => import('./profil/profil.module').then( m => m.ProfilPageModule)

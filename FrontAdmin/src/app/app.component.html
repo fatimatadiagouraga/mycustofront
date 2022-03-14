@@ -15,15 +15,15 @@
 <mat-sidenav-container ><br>
   <mat-sidenav class="bg-warning" #sidenav="matSidenav">
     <img src="assets/images/images.jpg" alt="" style="height: 60PX;width: 60px;">
-    <h4 class="name">{{user.prenom}} {{user.nom}}</h4><br>
+    <h4 class="name">{{user?.prenom}} {{user?.nom}}</h4><br>
 
     <mat-divider style="margin-top: 60px;"></mat-divider><br>
     
-    <button mat-button class="menu-button" routerLink="/listAdmin" *ngIf="user.profil==='admin'">
+    <button mat-button class="menu-button" routerLink="/listAdmin" *ngIf="user?.profil==='admin'">
       <img src="..\assets\images\admin.png" alt="" srcset="" style="height: 40PX;width: 40px;">
       <span>  GESTION DES ADMINS</span>
     </button>
-    <button mat-button class="menu-button" routerLink="/commande" *ngIf="user.profil==='admin'">
+    <button mat-button class="menu-button" routerLink="/commande" >
       <img src="..\assets\images\commande.png" alt="" srcset="" style="height: 40PX;width: 40px;">
       <span>  GESTION DES COMMANDES</span>
     </button>

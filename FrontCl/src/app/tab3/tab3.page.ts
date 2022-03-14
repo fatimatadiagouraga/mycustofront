@@ -34,10 +34,6 @@ export class Tab3Page implements OnInit{
     })
   }
 
-  check(event){    
-    console.log(event.target.checked);
-  
-  }
 
   ajoutCommande(){
     let a = JSON.stringify(this.commande);
