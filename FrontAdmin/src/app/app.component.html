@@ -1,3 +1,4 @@
+<div *ngIf="loginStatus">
 <mat-toolbar >
   <button mat-icon-button *ngIf="sidenav.mode==='over'" (click)="sidenav.toggle()">
     <mat-icon *ngIf="!sidenav.opened">
@@ -40,11 +41,16 @@
       <span style="color: red;">Deconnexion</span>
     </button>   
   </mat-sidenav>
+
   <mat-sidenav-content>
     <div class="content mat-elevation-z4">
       <router-outlet></router-outlet>
     </div>
   </mat-sidenav-content>
+
 </mat-sidenav-container> 
   
-  
+  </div>
+  <div *ngIf="!loginStatus">
+    <router-outlet></router-outlet>
+  </div>

@@ -14,6 +14,7 @@ export class AppComponent implements OnInit{
   user: any;
 
   @ViewChild(MatSidenav) sidenav!:MatSidenav;
+  loginStatus!: boolean;
   constructor(private observer:BreakpointObserver){
 
 
@@ -23,6 +24,7 @@ export class AppComponent implements OnInit{
       this.data=localStorage.getItem('isLogin');
       this.user=JSON.parse(this.data)
       console.log(this.user);
+      this.loginStatus = JSON.parse(localStorage['loginStatus']);
       
   }
   ngAfterViewInit(){

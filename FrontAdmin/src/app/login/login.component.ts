@@ -25,7 +25,6 @@ export class LoginComponent implements OnInit {
         let loginStatus = true
 
         localStorage.setItem('isLogin', JSON.stringify(this.loginInfo));
-        
         localStorage.setItem('loginStatus', JSON.stringify(loginStatus));
         location.replace("/commande");
       }

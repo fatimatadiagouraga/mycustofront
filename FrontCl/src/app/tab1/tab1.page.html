@@ -1,5 +1,5 @@
 <ion-header [translucent]="true">
-  <ion-toolbar>
+  <ion-toolbar mode="md">
     <ion-title>
       Accueil
     </ion-title>
@@ -7,36 +7,51 @@
 </ion-header>
 
 <ion-content>
-<!-- menu du jour entete -->
-<ion-card>
-  <ion-card-header class="textmenu">Menu du Jour</ion-card-header>
-  <ion-img src="../assets/Images/menudujour.jpg" style="height:100px;" class="menudujour"></ion-img>
-  <ion-card-content class="descriptionmenu">humberger viande</ion-card-content>
-</ion-card>
 
-<ion-grid >
-  
-    <span>
-    <ion-col>
-        <div class="order-items" *ngFor="let l of liste">
-          <ion-card style="background-color: rgb(233, 159, 22);margin: 15px 25px;height: 255px; width: 200px ; float: right;border-radius: 20px;">
-            <ion-img src="{{image}} {{l.id_plat}}" style="width: 90%;height: 45%;margin: 5px 10px;" routerLink="/plat-details/{{l.id_plat}}"></ion-img>
-            <ion-card-content>
-              <h2 style="text-align: center;color: black ;font-weight: bold;" value="([ngModel])">{{l.nom_plat}}</h2>
-              <div class="item-img">
-              </div><br>
-      
-              <div class="item-info ion-text-center" style="text-align: center;color: black ;font-weight: bold; " value="([ngModel])">
-                {{ l.prix_plat}} FCFA
-              </div>
-              <ion-img src="../assets/Images/commander.png" (click)="ajouter(l.id_plat, l)" class="commander"  style="height: 40px;width: 38px;float: right;margin-left: 100px;"></ion-img>
-            </ion-card-content>
-          </ion-card>
-        </div>
+<ion-slides [options]="slideOpts" >
+  <ion-slide  >
+    <ion-card>
+      <img src="assets/Images/fauves13_0.jpg"/>
+      <P>NOM</P>
+    </ion-card>
+  </ion-slide>
+  <ion-slide  >
+    <ion-card >
+      <img src="assets/Images/istockphoto-1295387240-170667a.jpg"/>
+      <P>NOM</P>
+    </ion-card>
+  </ion-slide>
+  <ion-slide  >
+    <ion-card>
+      <img src="assets/Images/images.jpg"/>
+      <P>NOM</P>
+    </ion-card>
+  </ion-slide>
+  <ion-slide  >
+    <ion-card>
+      <img src="assets/Images/téléchargement.jpg"/>
+      <P>NOM</P>
+    </ion-card>
+  </ion-slide>
+</ion-slides>
 
-      </ion-col>
-    </span>
+<p class="titleMenu">MENU DU JOUR</p>
+  <div style="height: 275px;overflow-y: scroll;">
 
-  
-</ion-grid>
+    <div class="order-items" *ngFor="let l of liste">
+      <ion-card>
+        <ion-img src="{{image}} {{l.id_plat}}" style="width: 100%;margin-top: 0px;" routerLink="/plat-details/{{l.id_plat}}"></ion-img>
+        <ion-card-content>
+          <h2 style="text-align: center;color: black ;font-weight: bold;" value="([ngModel])">{{l.nom_plat}}</h2>
+          <ion-item>
+            <ion-label class="ion-text-wrap" style="font-size: 15px;" slot="start"> {{ l.prix_plat}} FCFA</ion-label>
+            <ion-label slot="end">
+          <ion-img src="../assets/Images/commander.png" (click)="ajouter(l.id_plat, l)" class="commander"  style="height: 40px;width: 38px;float: right;margin-left: 100px;"></ion-img>
+            </ion-label>
+          </ion-item>
+        </ion-card-content>
+      </ion-card>
+    </div>
+  </div>
+
 </ion-content>

@@ -1,0 +1,22 @@
+<ion-header>
+  <ion-toolbar>
+    <ion-title>categorie-liste</ion-title>
+    
+  </ion-toolbar>
+</ion-header>
+
+<ion-content>
+  <div *ngFor="let m of menus">
+  <ion-card class="myCard">
+    <ion-card-content style="display: flex;">
+      <ion-img src="{{image}} {{m.id_plat}}" style="width: 80%;height: 60px;"></ion-img>
+      <div>
+        <h5 style="color:black; font-weight: bold; ">{{m.nom_plat}}</h5>
+        <h5 style="color:black; font-weight: bold; ">{{m.prix_plat}}</h5>
+      </div>
+       
+    </ion-card-content>
+  </ion-card>
+</div>
+
+</ion-content>

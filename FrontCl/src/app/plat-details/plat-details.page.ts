@@ -23,7 +23,6 @@ export class PlatDetailsPage implements OnInit {
     console.log(this.ID); 
 
     this.service.getById(this.ID).subscribe(data =>{
-
       const a = JSON.stringify(data)
       this.Plat = JSON.parse(a);
       console.log(this.Plat.prix_plat);

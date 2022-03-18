@@ -24,7 +24,7 @@ const routes: Routes = [
     loadChildren: () => import('./plat-details/plat-details.module').then( m => m.PlatDetailsPageModule)
   },
   {
-    path: 'modifier-info-client',
+    path: 'modifier-info-client/:id',
     loadChildren: () => import('./modifier-info-client/modifier-info-client.module').then( m => m.ModifierInfoClientPageModule)
   },
   {
@@ -34,7 +34,13 @@ const routes: Routes = [
   {
     path: 'valider-commande',
     loadChildren: () => import('./valider-commande/valider-commande.module').then( m => m.ValiderCommandePageModule)
+  },
+ 
+  {
+    path: 'categorie-liste/:id',
+    loadChildren: () => import('./categorie-liste/categorie-liste.module').then( m => m.CategorieListePageModule)
   }
+
 ];
 @NgModule({
   imports: [

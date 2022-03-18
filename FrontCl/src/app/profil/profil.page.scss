@@ -1,6 +1,6 @@
 .header {
   height: 180px;
-  background-color: rgb(238, 196, 117);
+  background-color:orange;
   width: 100%;
   padding-top: 1px;
 }
@@ -24,13 +24,15 @@
   border: 7px solid orange;
   border-radius: 50%;
   width: fit-content;
+  margin-top: 30Px;
 }
 .flex {
   display: flex;
   justify-content: center;
   margin-top: -76px;
 }
-.modifier{
+ion-button{
   color: white;
   background-color: black;
+  width: 40%;
 }

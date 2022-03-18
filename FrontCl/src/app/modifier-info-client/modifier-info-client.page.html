@@ -3,42 +3,43 @@
     <ion-title>Modifier ses informations</ion-title>
   </ion-toolbar>
 </ion-header>
-<ion-content>
-  <form action="">
+<ion-content fullscreen="true">
+  <form #update="ngForm" (ngSubmit)="modifierClt(client)">
       <ion-item>
-        <ion-label position="floating">Nom</ion-label>
-        <ion-input class="input1" type="text"></ion-input>
+        <ion-label position="floating" >Nom</ion-label>
+        <ion-input class="input1" type="text"  name="nom" #nom="ngModel" [(ngModel)]="client.nom" ></ion-input>
       </ion-item>
       <ion-item>
         <ion-label position="floating">Prenom</ion-label>
-        <ion-input type="text"></ion-input>
+        <ion-input type="text"  name="prenom" #prenom="ngModel" [(ngModel)]="client.prenom"></ion-input>
       </ion-item>
       <ion-item>
         <ion-label position="floating">Email</ion-label>
-        <ion-input type="email"></ion-input>
+        <ion-input type="email"  name="email" #email="ngModel" [(ngModel)]="client.email" ></ion-input>
       </ion-item>
       <ion-item>
         <ion-label position="floating">Tel</ion-label>
-        <ion-input type="number"></ion-input>
+        <ion-input type="number" ngModel name="telephone" #telephone="ngModel" [(ngModel)]="client.telephone"></ion-input>
       </ion-item>
       <ion-item>
         <ion-label position="floating">Mot de passe</ion-label>
-        <ion-input type="password"></ion-input>
+        <ion-input type="password" ngModel name="motdepasse" #motdepasse="ngModel" [(ngModel)]="client.motdepasse"></ion-input>
       </ion-item>
       <ion-item>
         <ion-label position="floating">Adresse</ion-label>
-        <ion-input type="text"></ion-input>
+        <ion-input type="text" ngModel name="adresse" #adresse="ngModel" [(ngModel)]="client.adresse"></ion-input>
       </ion-item>
       <ion-item>
-        <ion-label position="floating">Numero Carte</ion-label>
-        <ion-input type="number"></ion-input>
+        <ion-label position="floating">Login</ion-label>
+        <ion-input type="number" ngModel name="login" #login="ngModel" [(ngModel)]="client.login"></ion-input>
       </ion-item>
+      <button  shape="round" class="annuler" color="black" [routerLink]="['/profil']"  >
+        Annuler
+      </button>
+      <button  type="submit"   shape="round" class="valider" color="black">
+        Enregister
+      </button>
   </form>
-  <ion-button  shape="round" class="annuler" color="black" [routerLink]="['/profil']"  >
-    Annuler
-  </ion-button>
-  <ion-button  shape="round" class="valider" color="black" [routerLink]="['/profil']">
-    Enregister
-  </ion-button>
+  
 </ion-content>
 

@@ -26,7 +26,24 @@ export class ServicesService {
     return this.http.post('http://localhost:8080/mycustoApi/commande/ajouterCommande/'+id_client,commandes);
   }
 
+  //supprimerPanier
+  supprimerPanier(id_panier: any){
+ return this.http.delete('http://localhost:8080/mycustoApi/panier/suppPanier/'+ id_panier);
+}
 
 
+  listeMenu(){
+    return this.http.get('http://localhost:8080/mycustoapi/menu/listeMenu');
+  }
 
+listePlatMenu(id_menu:any){
+  return this.http.get('http://localhost:8080/mycustoapi/plat/listParMenu/'+id_menu);
+}
+clientById(id:any){
+  return this.http.get('http://localhost:8080/mycustoApi/client/clientById/'+ id);
+}
+
+modifierClt(id:any,clients:any){
+  return this.http.put('http://localhost:8080/mycustoApi/client/modifierClient/'+id,clients);
+}
 }
