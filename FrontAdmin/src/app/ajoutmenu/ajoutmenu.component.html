@@ -1,0 +1,55 @@
+<app-header></app-header>
+<app-sidemenu></app-sidemenu>
+  <div class="page-wrapper">
+    <div class="page-breadcrumb bg-white">
+      <div class="row align-items-center">
+        <div class="col-lg-3 col-md-4 col-sm-4 col-xs-12">
+          <h4 class="page-title" style="font-size: 18px;">ACCUEIL</h4>
+        </div>
+        <div class="col-lg-9 col-sm-8 col-md-8 col-xs-12">
+          <div class="d-md-flex">
+            <ol class="breadcrumb ms-auto">
+              <li><a href="#" class="fw-normal text-success" style="font-weight: bold;">PUBLIER UNE ANNONCE</a></li>
+            </ol>
+  
+          </div>
+        </div>
+      </div>
+      <!-- /.col-lg-12 -->
+    </div>
+    <div class="container-fluid">
+
+
+<mat-card style="background-color: rgb(255, 255, 255);border-radius: 30px;margin: 100px 50px;">
+    <div>
+        <h1 style="text-align: center;color: black;font-weight: bold;">Ajouter Menu</h1>
+        <form  #datamenus="ngForm"  (ngSubmit)="ajoutmenu(datamenus)"
+        class="form" >
+               
+                <input type="text" placeholder="NomMenu" name="nom_menu" ngModel>
+            
+                <input type="text" placeholder="Description" name="description_menu" ngModel>
+           
+                <label >Choisir Jour:</label>
+                <select name="menujour" name="menujour" style="color: black;padding: 20px;" class="jour" ngModel>
+                    <option  value="">--Choisir un jour--</option>
+                    <option value="Lundi">Lundi</option>                  
+                    <option value="Mardi">Mardi</option>                  
+                    <option value="Mercredi">Mercredi</option>                  
+                    <option value="Jeudi">Jeudi</option>                  
+                    <option value="Vendredi">Vendredi</option>                  
+                    <option value="Samedi">Samedi</option>                  
+                    <option value="Dimanche">Dimanche</option> 
+                                     
+                </select> 
+            <button type="submit">Ajouter</button>
+            <div>
+                
+              
+            </div>
+        </form>
+    </div>  
+</mat-card>
+
+<div>
+</div>

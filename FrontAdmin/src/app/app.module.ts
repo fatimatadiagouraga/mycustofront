@@ -1,7 +1,14 @@
 import { NgModule } from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
+
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
+import { HeaderComponent } from './header/header.component';
+import { AcceuilComponent } from './acceuil/acceuil.component';
+import { SidemenuComponent } from './sidemenu/sidemenu.component';
+// import { NgModule } from '@angular/core';
+// import { BrowserModule } from '@angular/platform-browser';
+
 import { MatToolbarModule } from '@angular/material/toolbar';
 import {MatIconModule} from '@angular/material/icon';
 import {MatSidenavModule} from '@angular/material/sidenav';
@@ -9,51 +16,49 @@ import {MatButtonModule} from '@angular/material/button';
 import {MatDividerModule} from '@angular/material/divider';
 import {MatDialogModule} from '@angular/material/dialog';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
-import { CommandeComponent } from './commande/commande.component';
 import { MatCardModule } from "@angular/material/card";
 import {MatListModule} from '@angular/material/list';
 import {MatRadioModule} from '@angular/material/radio';
-import { LoginComponent } from './login/login.component';
-import { ToolbarComponent } from './toolbar/toolbar.component';
-import { PlatComponent } from './plat/plat.component';
-import { MenuComponent } from './menu/menu.component';
-import { AjoutPlatComponent } from './ajout-plat/ajout-plat.component';
-import { ModifierPlatComponent } from './modifier-plat/modifier-plat.component';
-import { SupprimerPlatComponent } from './supprimer-plat/supprimer-plat.component';
-import { AjoutMenuComponent } from './ajout-menu/ajout-menu.component';
-import { ModifierMenuComponent } from './modifier-menu/modifier-menu.component';
-import { SupprimerMenuComponent } from './supprimer-menu/supprimer-menu.component';
-import { AjoutAdminComponent } from './ajout-admin/ajout-admin.component';
 import { HttpClientModule } from '@angular/common/http';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import {MatSnackBarModule} from '@angular/material/snack-bar';
-import { ListAdminComponent } from './list-admin/list-admin.component';
-import { ModifierAdminComponent } from './modifier-admin/modifier-admin.component';
 import {MatSelectModule} from '@angular/material/select';
 import { MatFormFieldModule } from '@angular/material/form-field';
+import { ListadminComponent } from './listadmin/listadmin.component';
 
+import { ModifieradminComponent } from './modifieradmin/modifieradmin.component';
+import { AjoutadminComponent } from './ajoutadmin/ajoutadmin.component';
+import { PlatComponent } from './plat/plat.component';
+import { AjoutplatComponent } from './ajoutplat/ajoutplat.component';
+import { ModifierplatComponent } from './modifierplat/modifierplat.component';
+import { MenuComponent } from './menu/menu.component';
+import { AjoutmenuComponent } from './ajoutmenu/ajoutmenu.component';
+import { ModifiermenuComponent } from './modifiermenu/modifiermenu.component';
+import { LoginComponent } from './login/login.component';
+import { CommandeComponent } from './commande/commande.component';
 
 @NgModule({
   declarations: [
     AppComponent,
-    CommandeComponent,
-    LoginComponent,
-    ToolbarComponent,
-    PlatComponent,
-    MenuComponent,
-    AjoutPlatComponent,
-    ModifierPlatComponent,
-    SupprimerPlatComponent,
-    AjoutMenuComponent,
-    ModifierMenuComponent,
-    SupprimerMenuComponent,
-    AjoutAdminComponent,
-    ListAdminComponent,
-    ModifierAdminComponent,
+    HeaderComponent,
+    AcceuilComponent,
+    SidemenuComponent,
+    ListadminComponent,
+    
+    ModifieradminComponent,
+         AjoutadminComponent,
+         PlatComponent,
+         AjoutplatComponent,
+         ModifierplatComponent,
+         MenuComponent,
+         AjoutmenuComponent,
+         ModifiermenuComponent,
+         LoginComponent,
+         CommandeComponent
   ],
   imports: [
     BrowserModule,
-    AppRoutingModule,
+    AppRoutingModule, 
     MatToolbarModule,
     MatIconModule,
     MatSidenavModule,
@@ -70,8 +75,6 @@ import { MatFormFieldModule } from '@angular/material/form-field';
     MatSnackBarModule,
     MatSelectModule,
     MatFormFieldModule
-    
-    
   ],
   providers: [],
   bootstrap: [AppComponent]

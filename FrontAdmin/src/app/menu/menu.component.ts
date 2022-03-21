@@ -1,9 +1,9 @@
 import { Component, OnInit } from '@angular/core';
-import { ServicesService } from '../services.service';
+import { MatDialog } from '@angular/material/dialog';
 import { MatSnackBar } from '@angular/material/snack-bar';
 import { ActivatedRoute } from '@angular/router';
-import { MatDialog } from '@angular/material/dialog';
-import { ModifierMenuComponent } from '../modifier-menu/modifier-menu.component';
+import { ModifiermenuComponent } from '../modifiermenu/modifiermenu.component';
+import { ServiceService } from '../services/service.service';
 
 @Component({
   selector: 'app-menu',
@@ -11,11 +11,10 @@ import { ModifierMenuComponent } from '../modifier-menu/modifier-menu.component'
   styleUrls: ['./menu.component.scss']
 })
 export class MenuComponent implements OnInit {
-
   menus :any;
   boiterecup: any;
 
-  constructor(private s :ServicesService,public snackbar :MatSnackBar,private route:ActivatedRoute,public dialogue:MatDialog) { }
+  constructor(private s :ServiceService,public snackbar :MatSnackBar,private route:ActivatedRoute,public dialogue:MatDialog) { }
 
   ngOnInit(): void {
     this.listMenu();    
@@ -41,7 +40,7 @@ export class MenuComponent implements OnInit {
     return this.s.menuparid(id_menu).subscribe(donnees =>{
       this.boiterecup =donnees;
       console.log(this.boiterecup);
-      this.dialogue.open(ModifierMenuComponent, {
+      this.dialogue.open(ModifiermenuComponent, {
       data: {
       route: this.boiterecup, 
     }
@@ -51,4 +50,8 @@ export class MenuComponent implements OnInit {
 
 }
 
+}
+
+function ModifierMenuComponent(ModifierMenuComponent: any, arg1: { data: { route: any; }; }) {
+  throw new Error('Function not implemented.');
 }

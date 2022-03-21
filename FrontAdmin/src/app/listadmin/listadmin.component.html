@@ -1,0 +1,59 @@
+<app-header></app-header>
+<app-sidemenu></app-sidemenu>
+  <div class="page-wrapper">
+    <div class="page-breadcrumb bg-white">
+      <div class="row align-items-center">
+        <div class="col-lg-3 col-md-4 col-sm-4 col-xs-12">
+          <!-- <h4 class="page-title" style="font-size: 18px;">ACCUEIL</h4> -->
+        </div>
+        <div class="col-lg-9 col-sm-8 col-md-8 col-xs-12">
+          <div class="d-md-flex">
+            <ol class="breadcrumb ms-auto">
+              <!-- <li><a href="#" class="fw-normal text-success" style="font-weight: bold;">PUBLIER UNE ANNONCE</a></li> -->
+            </ol>
+  
+          </div>
+        </div>
+      </div>
+      <!-- /.col-lg-12 -->
+    </div>
+    <div class="container-fluid">
+
+<div style="margin-top: 8%;">
+  <i class=" fas fa-plus" aria-hidden="true" style="font-size: 30px;color: orange;float:right" routerLink="/ajoutAdmin">Ajout</i>
+
+  <!-- <mat-icon class="plus" routerLink="/ajoutAdmin" style="float:right">add_circle_outline</mat-icon> -->
+
+  <h1 style="text-align: center;font-weight: bold;">   Les administrateurs</h1>
+
+  <table mat-table class="mat-elevation-z8 demo-table">
+   
+    <ng-container matColumnDef="position" *ngFor="let admin of administrateurs">
+     <tr >
+        <td  style="font-size: 20px;padding: 20px 20px;border-bottom: 4px solid white;">{{admin.nom}}</td>
+        <td  style="font-size: 20px;padding: 20px 20px;border-bottom: 4px solid white;">{{admin.prenom}}</td>
+        <td  style="font-size: 20px;padding: 20px 20px;border-bottom: 4px solid white;">{{admin.telephone}}</td>
+        <td>
+            <div class="icon">
+              <i class="fas fa-pencil-alt" aria-hidden="true" style="font-size: 30px;color: orange;" (click)="btnmodif(admin.id_admin)"></i>
+                <!-- <mat-icon style="color: orange;"  (click)="btnmodif(admin.id_admin)">create</mat-icon><br> -->
+               
+            </div>
+        </td>
+        <td>
+            <div class="icon">
+              <i class=" fas fa-trash-alt" aria-hidden="true" style="font-size: 30px;color: red;" (click)="SuppAdmin(admin.id_admin)"></i>
+                 
+                <!-- <mat-icon style="color: red;" (click)="SuppAdmin(admin.id_admin)" >delete</mat-icon> -->
+            </div>
+        </td>
+
+     </tr>
+      
+      
+    </ng-container>
+  
+  </table>
+</div> 
+    </div>
+  </div>

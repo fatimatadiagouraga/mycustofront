@@ -27,10 +27,18 @@
     }
    
 .col-md-3 {
+    display: block;
+    flex-direction: column;
     width: 350px;
     height: 500px;
     margin: 10px 10px;
+    background-color: white;
 
+  }
+
+
+  .col-md-3:hover{
+      background-color: rgb(205, 207, 207);
   }
   
   .image {

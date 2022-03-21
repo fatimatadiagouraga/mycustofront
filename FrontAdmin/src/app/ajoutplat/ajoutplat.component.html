@@ -1,0 +1,54 @@
+<app-header></app-header>
+<app-sidemenu></app-sidemenu>
+  <div class="page-wrapper">
+    <div class="page-breadcrumb bg-white">
+      <div class="row align-items-center">
+        <div class="col-lg-3 col-md-4 col-sm-4 col-xs-12">
+          <h4 class="page-title" style="font-size: 18px;">ACCUEIL</h4>
+        </div>
+        <div class="col-lg-9 col-sm-8 col-md-8 col-xs-12">
+          <div class="d-md-flex">
+            <ol class="breadcrumb ms-auto">
+              <li><a href="#" class="fw-normal text-success" style="font-weight: bold;">PUBLIER UNE ANNONCE</a></li>
+            </ol>
+  
+          </div>
+        </div>
+      </div>
+      <!-- /.col-lg-12 -->
+    </div>
+    <div class="container-fluid">
+
+<mat-card style="background-color:white;border-radius: 30px;margin-top: 5%;">
+    <div>
+        <h1 style="text-align: center;color: black;font-weight: bold;">Ajouter Plats</h1>
+        <mat-card style="width:100% ;justify-items: center;margin-left: 0px;background-color: rgb(240, 236, 232);">
+        <form #dataplat="ngForm" (ngSubmit)="ajoutPlat(dataplat)" class="container">
+                <div class="input">                          
+                        <input type="text" name="nom_plat"  ngModel required placeholder="Nom" >
+                  
+                        <input type="number" ngModel name="prix_plat" ngModel required placeholder="Prix">
+
+                        <input type="text" ngModel name="description" ngModel required placeholder="description">
+
+                        <input type="text" ngModel name="ingredients" ngModel required placeholder="ingredient">
+
+                        <input type="file" #file ngModel name="image" ngModel (change)="lirephoto(file.files)" required  accept=".jpg, .jpeg, .png" placeholder="Choisir une Photo" class="file">
+
+                        <select name="menu" ngModel style="color: black;padding-top: 15px;  padding-bottom: 20px;" class="menu">
+                          <option  value="">--Choisir un menu--</option>
+                          <option *ngFor="let m of menus" value="{{m.id_menu}}">{{m.nom_menu}}</option>                  
+                      </select> 
+                </div>        
+                       
+                <div style="display: flex;justify-content: center;">
+                     <button type="submit" style="background-color: black; padding: 10px 30px;margin: 20px 120px;color: white;">Ajouter</button>
+                </div>
+        </form>
+        </mat-card>
+    </div>  
+
+    
+</mat-card>
+</div>
+</div>

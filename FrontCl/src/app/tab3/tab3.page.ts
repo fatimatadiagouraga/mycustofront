@@ -1,8 +1,11 @@
 import { Component ,OnInit } from '@angular/core';
-import { resetFakeAsyncZone } from '@angular/core/testing';
+import { ModelPanier } from '../model-panier';
+
+
 
 import { ServicesService } from '../Services/services.service';
 import { Commande } from './commande.model';
+import { PanierService } from './panier.service';
 
 @Component({
   selector: 'app-tab3',
@@ -14,7 +17,8 @@ export class Tab3Page implements OnInit{
   panierList:any;
   image: any;
   commande: Commande = new Commande();
-
+  panier: ModelPanier =new ModelPanier();
+  quantite=1;
   
 
   constructor(private service:ServicesService) {}
@@ -37,15 +41,12 @@ export class Tab3Page implements OnInit{
      this.service.panierParClient(this.client.id_client).subscribe(datas =>{
       this.panierList=datas;
       this.commande.panierList= this.panierList
-      console.log('ttttttttttttttttttttttttttttttttt',this.panierList);
     })
   }
 
 
   ajoutCommande(){
     let a = JSON.stringify(this.commande);  
-    console.log(JSON.parse(a));
-    
     return this.service.ajoutcommande(JSON.parse(a),this.client.id_client).subscribe(data =>{
       console.log(data);
      this.ngOnInit(); 
@@ -61,6 +62,18 @@ export class Tab3Page implements OnInit{
       this.ngOnInit();
 
     })
-    }
+  }
 
+  update(id_panier:any,quantite:any,panier){
+     
+    quantite = quantite + 1
+    this.service.updateQ(id_panier,quantite,panier).subscribe( data=>{
+      console.log(data);
+      this.panierclient();
+    })
+  }
+
+  incremante(){
+    
+  } 
 }

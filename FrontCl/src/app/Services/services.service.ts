@@ -46,4 +46,11 @@ clientById(id:any){
 modifierClt(id:any,clients:any){
   return this.http.put('http://localhost:8080/mycustoApi/client/modifierClient/'+id,clients);
 }
+
+//quantite de plat commandé 
+
+updateQ(id_panier:any,quantite:any,panier:any){
+return this.http.put('http://localhost:8080/mycustoApi/panier/updateQ/'+id_panier+'/'+quantite,panier);
+}
+
 }

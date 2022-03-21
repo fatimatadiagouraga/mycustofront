@@ -1,8 +1,8 @@
 import { Component, OnInit } from '@angular/core';
-import { ServicesService } from '../services.service';
 import { MatDialog } from '@angular/material/dialog';
-import { ModifierPlatComponent } from '../modifier-plat/modifier-plat.component';
 import { ActivatedRoute } from '@angular/router';
+import { ModifierplatComponent } from '../modifierplat/modifierplat.component';
+import { ServiceService } from '../services/service.service';
 
 @Component({
   selector: 'app-plat',
@@ -11,31 +11,26 @@ import { ActivatedRoute } from '@angular/router';
 })
 export class PlatComponent implements OnInit {
 
-  constructor(
-    private service : ServicesService,
+  constructor(private service : ServiceService,
     public dialog:MatDialog,
     private route : ActivatedRoute) { }
 
-  listplat : any;
+    listplat : any;
   boiterecup:any;
 
   image:any;
 
   ngOnInit(): void {
-  
-  this.listplats();
+
+    this.listplats();
   this.image=this.service.apiimage;
-  
-  
   }
 
-
-//fonction qui ouvre une boite de dialogue en cliquant sur licone modif
   btnmodif(btn:any){
     this.service.RecupererParId(btn).subscribe(data => {
       //boiterecup fonction qui permet de recuperer les données a modifier par id
       this.boiterecup =data;
-      this.dialog.open(ModifierPlatComponent, {
+      this.dialog.open(ModifierplatComponent, {
         data: {
         route: this.boiterecup
         }
@@ -62,4 +57,5 @@ export class PlatComponent implements OnInit {
     );
     
   }
+
 }

@@ -1,7 +1,30 @@
+<app-header></app-header>
+<app-sidemenu></app-sidemenu>
+  <div class="page-wrapper">
+    <div class="page-breadcrumb bg-white">
+      <div class="row align-items-center">
+        <!-- <div class="col-lg-3 col-md-4 col-sm-4 col-xs-12">
+          <h4 class="page-title" style="font-size: 18px;">ACCUEIL</h4>
+        </div>
+        <div class="col-lg-9 col-sm-8 col-md-8 col-xs-12">
+          <div class="d-md-flex">
+            <ol class="breadcrumb ms-auto">
+              <li><a href="#" class="fw-normal text-success" style="font-weight: bold;">PUBLIER UNE ANNONCE</a></li>
+            </ol>
+  
+          </div>
+        </div> -->
+      </div>
+      <!-- /.col-lg-12 -->
+    </div>
+    <div class="container-fluid">
 
-<body>
-    <div style="padding-top: 30px;">
-      <mat-icon class="plus" routerLink="/ajoutMenu">add_circle_outline</mat-icon>  
+
+<body >
+    <div style="padding-top: 30px;margin-top: 10%;">
+  <i class=" fas fa-plus" aria-hidden="true" style="font-size: 30px;color: orange;float:right" routerLink="/ajoutMenu">Ajout</i>
+
+      <!-- <mat-icon class="plus" routerLink="/ajoutMenu">add_circle_outline</mat-icon>   -->
       <h1 style="text-align: center;font-weight: bold;">Liste des menus</h1> 
     </div>
 
@@ -9,11 +32,15 @@
       <div class="row" >
           <mat-card class="col-md-4" *ngFor="let menu of menus">
                 <p class="icon">
-                    <mat-icon style="color: orange;" (click)="menuparid(menu.id_menu)">create</mat-icon><br>
-                    <mat-icon style="color: red;" (click)="supmenu(menu.id_menu)">delete</mat-icon>
+              <i class="fas fa-pencil-alt" aria-hidden="true" style="font-size: 25px;color: orange;" (click)="menuparid(menu.id_menu)"></i><br>
+
+                    <!-- <mat-icon style="color: orange;" (click)="menuparid(menu.id_menu)">create</mat-icon><br> -->
+              <i class=" fas fa-trash-alt" aria-hidden="true" style="font-size: 25px;color: red;" (click)="supmenu(menu.id_menu)"></i>
+
+                    <!-- <mat-icon style="color: red;" (click)="supmenu(menu.id_menu)">delete</mat-icon> -->
                 </p>
                 <!-- <img src="#" alt="" srcset="" style="width: 50px;height: 50px;"> -->
-                <h2 style="font-weight: bold;color:orange  ;text-align: center;text-decoration: underline 4px rgb(252, 250, 249);">{{menu.nom_menu}}</h2>   
+                <h2 style="font-weight: bold;color:black ;text-align: center;text-decoration: underline 4px rgb(252, 250, 249);">{{menu.nom_menu}}</h2>   
                 <h3>{{menu.menujour}}</h3>            
                 <p>{{menu.description_menu}}</p>  
                             
@@ -24,6 +51,8 @@
     </div>
     
 </body>
+    </div>
+  </div>
    
     
    

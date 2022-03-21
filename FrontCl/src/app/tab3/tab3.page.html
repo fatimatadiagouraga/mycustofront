@@ -7,12 +7,16 @@
 </ion-header>
 
 <ion-content >
-  <ion-item>
+  <!-- <ion-item>
     <div style="position:fixed;width: 100%;background-color: black;">
       <ion-button color="success" type="submit" style="margin-left: 50px;" (click)="ajoutCommande()">Commander</ion-button>
     </div>
+  </ion-item> -->
+  <ion-item>
+    <div style="position:fixed;width: 100%;background-color: black;">
+      <ion-button color="success" type="submit" style="margin-left: 50px;" routerLink="/valider-commande">Commander</ion-button>
+    </div>
   </ion-item>
- 
     
   <!-- <span>
     <div class="unecommande">
@@ -49,20 +53,23 @@
     </ion-item>
     <ion-item >
       <ion-thumbnail slot="start">
-        <img src="{{image}} {{p.plat.id_plat}}">
+        <img src="{{image}} {{p?.plat?.id_plat}}">
       </ion-thumbnail>
       <ion-label>
-        <ion-card-subtitle> {{p.plat.nom_plat}}</ion-card-subtitle>
-      <ion-card-title style="font-size: 12px;">  {{p.plat.prix_plat}} FCFA</ion-card-title>
+        <ion-card-subtitle> {{p?.plat?.nom_plat}}</ion-card-subtitle>
+      <ion-card-title style="font-size: 12px;">  {{p?.plat?.prix_plat}} FCFA</ion-card-title>
       </ion-label>
     </ion-item>
     <ion-card-content>
       <ion-item>
-        <ion-label>Quantité</ion-label>
-        <ion-input type="number"></ion-input>
-      </ion-item>
-      <ion-item>
-        <ion-label> Nombre</ion-label>
+        <ion-label>Quantite: 
+          <span style="color: orange;" *ngIf="quantite === 1">{{p?.quantite}}</span>
+          <!-- <span style="color: orange;" *ngIf="quantite !== 1">{{quantite}}</span> -->
+        </ion-label>
+        <ion-button fill="clear" (click)="update(p.id_panier,p.quantite, p)">
+          <ion-icon name="add"></ion-icon>
+        </ion-button>
+        
       </ion-item>
     </ion-card-content>
   </ion-card>

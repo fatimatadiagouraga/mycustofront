@@ -20,16 +20,16 @@ describe('AppComponent', () => {
     expect(app).toBeTruthy();
   });
 
-  it(`should have as title 'FrontAdmin'`, () => {
+  it(`should have as title 'mycustodash'`, () => {
     const fixture = TestBed.createComponent(AppComponent);
     const app = fixture.componentInstance;
-    expect(app.title).toEqual('FrontAdmin');
+    expect(app.title).toEqual('mycustodash');
   });
 
   it('should render title', () => {
     const fixture = TestBed.createComponent(AppComponent);
     fixture.detectChanges();
     const compiled = fixture.nativeElement as HTMLElement;
-    expect(compiled.querySelector('.content span')?.textContent).toContain('FrontAdmin app is running!');
+    expect(compiled.querySelector('.content span')?.textContent).toContain('mycustodash app is running!');
   });
 });

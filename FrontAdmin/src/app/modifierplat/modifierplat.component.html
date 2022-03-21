@@ -1,0 +1,46 @@
+<div class="page-wrapper">
+    <div class="page-breadcrumb bg-white">
+      <div class="row align-items-center">
+        <!-- <div class="col-lg-3 col-md-4 col-sm-4 col-xs-12">
+          <h4 class="page-title" style="font-size: 18px;">ACCUEIL</h4>
+        </div>
+        <div class="col-lg-9 col-sm-8 col-md-8 col-xs-12">
+          <div class="d-md-flex">
+            <ol class="breadcrumb ms-auto">
+              <li><a href="#" class="fw-normal text-success" style="font-weight: bold;">PUBLIER UNE ANNONCE</a></li>
+            </ol>
+  
+          </div>
+        </div> -->
+      </div>
+      <!-- /.col-lg-12 -->
+    </div>
+    <div class="container-fluid">
+
+<mat-card style="background-color: rgb(193, 196, 196);border-radius: 30px;">
+    <div>
+        <h1 style="text-align: center;color: black;font-weight: bold;">Modification Plat</h1>
+        <form [formGroup]="monPlat" (submit)="modifplat()" class="form">
+            <div>
+                <label for="">Nom</label>
+                <input type="text" formControlName="nom_plat">
+            </div>
+            <div>
+                <label for="">Prix</label>
+                <input type="text" formControlName="prix_plat">
+            </div>
+            <div>
+                <label for="">Description</label>
+                <input type="text" formControlName="description">
+            </div>
+           
+            <div>
+                
+                <button type="submit" style="background-color: white; color: black; padding: 10px 20px;margin: 20px 120px;">Modifier</button>
+            </div>
+        </form>
+    </div>    
+    
+</mat-card>
+    </div>
+</div>

@@ -1,0 +1,80 @@
+
+  <aside class="left-sidebar t" >
+            <!-- Sidebar scroll-->
+            <div class="scroll-sidebar">
+                <!-- Sidebar navigation-->
+                <nav class="sidebar-nav">
+                    <ul id="sidebarnav">
+                        <!-- User Profile-->
+                        <li class="sidebar-item pt-2">
+                            <div >
+                                <div style="display:flex;justify-content: center;align-items: center;justify-items: center">
+                                    <img src="assets/images/images.jpg" alt="" style="height: 60PX;width: 60px;">
+                                </div>
+                                <div style="display:flex;justify-content: center;align-items: center;justify-items: center">
+                                    <p class="name" style="font-size: 15px;">{{user?.prenom}} {{user?.nom}}</p><br>
+                                </div>
+                            </div>
+                            
+                            <mat-divider style="margin-top: 60px;background-color: black;"></mat-divider><br>
+                        </li> 
+                        <li class="sidebar-item pt-2"> 
+                            
+                            <a class="sidebar-link waves-effect waves-dark sidebar-link" href="listAdmin"
+                                aria-expanded="false" *ngIf="user?.profil==='admin'" style="color: black;" sty>
+                                <i class="  fas fa-users"  aria-hidden="true" style="font-size: 30px; color: black;">  </i>
+                                <span class="hide-menu" style="font-size: 15px; font-weight: bold;margin-bottom: 10%;">  GESTION DES ADMINS</span>
+                                
+                        
+                            </a>
+                        </li>
+                        <li class="sidebar-item pt-2">
+                            <a class="sidebar-link waves-effect waves-dark sidebar-link" href="commande" aria-expanded="false" style="color: black;">
+                                <i class="  fas fa-book"  aria-hidden="true" style="font-size: 30px; color: black;">  </i>
+                                <span class="hide-menu" style="font-size: 15px; font-weight: bold;margin-bottom: 10%;">  GESTION DES COMMANDES</span>
+                             
+                            </a>
+                        </li>
+                        <li class="sidebar-item">
+                            <a class="sidebar-link waves-effect waves-dark sidebar-link" href="menu" aria-expanded="false" style="color: black;">
+                                <i class="  far fa-building"  aria-hidden="true" style="font-size: 30px;color: black;">  </i>
+                                <span class="hide-menu" style="font-size: 15px; font-weight: bold;margin-bottom: 10%;">  GESTION DES MENUS</span>
+                                
+                                  
+                            </a>
+                        </li>
+                       
+                        <li class="sidebar-item">
+                            <a class="sidebar-link waves-effect waves-dark sidebar-link" href="plat" aria-expanded="false" style="color: black;"> 
+                                <i class=" fas fa-utensils"  aria-hidden="true" style="font-size: 30px;color: black;">  </i>
+                                <span class="hide-menu" style="font-size: 15px; font-weight: bold;margin-bottom: 10%;">  GESTION DES PLATS</span>
+
+                            </a>
+                        </li>
+                        <li class="sidebar-item" style="margin-top: 50%;">
+                            <a class="sidebar-link waves-effect waves-dark sidebar-link" href=" "
+                                aria-expanded="false">
+                                    <img src="..\assets\images\off.png" alt="" srcset="" style="height: 40PX;width: 40px;">
+                                    
+                                <span class="hide-menu" style="color: red;" (click)="logOut()"> Deconnexion</span>
+
+                             
+                            </a>
+                        </li>
+                        
+                       
+                    </ul>
+
+                </nav>
+                <!-- End Sidebar navigation -->
+            </div>
+            <!-- End Sidebar scroll-->
+        </aside>
+        
+
+
+
+        
+  
+      
+       

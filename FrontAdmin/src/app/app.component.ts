@@ -1,51 +1,10 @@
-import { Component, OnInit } from '@angular/core';
-import { MatSidenav } from '@angular/material/sidenav';
-import { BreakpointObserver} from '@angular/cdk/layout';
-import { ViewChild } from '@angular/core';
+import { Component } from '@angular/core';
 
 @Component({
   selector: 'app-root',
   templateUrl: './app.component.html',
   styleUrls: ['./app.component.scss']
 })
-export class AppComponent implements OnInit{
-  title = 'FrontAdmin';
-  data: any;
-  user: any;
-
-  @ViewChild(MatSidenav) sidenav!:MatSidenav;
-  loginStatus!: boolean;
-  constructor(private observer:BreakpointObserver){
-
-
-
-  }
-  ngOnInit(): void {
-      this.data=localStorage.getItem('isLogin');
-      this.user=JSON.parse(this.data)
-      console.log(this.user);
-      this.loginStatus = JSON.parse(localStorage['loginStatus']);
-      
-  }
-  ngAfterViewInit(){
-    this.observer.observe(['(max-width: 800px)']).subscribe((res)=>{
-    if (res.matches) {
-      this.sidenav.mode = 'over';
-      this.sidenav.close();
-    }else{
-      this.sidenav.mode = 'side';
-      this.sidenav.open();
-
-    }
-    }
-    
-    );
-  }
+export class AppComponent {
+  title = 'mycustodash';
 }
-
-
-
-
-
-
-

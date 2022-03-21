@@ -1,0 +1,85 @@
+<app-header></app-header>
+<app-sidemenu></app-sidemenu>
+  <div class="page-wrapper">
+    <div class="page-breadcrumb bg-white">
+      <div class="row align-items-center">
+        <div class="col-lg-3 col-md-4 col-sm-4 col-xs-12">
+          <h4 class="page-title" style="font-size: 18px;">ACCUEIL</h4>
+        </div>
+        <div class="col-lg-9 col-sm-8 col-md-8 col-xs-12">
+          <div class="d-md-flex">
+            <ol class="breadcrumb ms-auto">
+              <li><a href="#" class="fw-normal text-success" style="font-weight: bold;">PUBLIER UNE ANNONCE</a></li>
+            </ol>
+  
+          </div>
+        </div>
+      </div>
+      <!-- /.col-lg-12 -->
+    </div>
+    <div class="container-fluid">
+
+
+<mat-card style="background-color: rgb(255, 255, 255);border-radius: 30px;margin: 5%;">
+    <div>
+        <h1 style="text-align: center;color: black;font-weight: bold;">Ajouter Admin</h1>
+        <form #dataAdmin="ngForm" (ngSubmit)="AjoutAdmin(dataAdmin)" class="form">
+            <div>
+                <span>
+               
+                    <input type="text"  required placeholder="Nom" name="nom" ngModel>
+                </span>
+                <span>
+                   
+                    <input type="text"  required placeholder="Prenom" name="prenom" ngModel>
+                </span>
+                <span>
+                    
+                    <input type="text"  required placeholder="Adresse" name="adresse" ngModel>
+                </span>
+                <span>
+                    <input type="number"  required placeholder="Tel" name="telephone" ngModel>
+                </span>
+                <span>
+                    <input type="email"  required placeholder="Email" name="email" ngModel>
+                </span>
+                <span>
+                    <input type="text"  required placeholder="Login" name="login" ngModel>
+                </span>
+                <span>
+                    <input type="text"  required placeholder="Mot de pase" name="motdepasse" ngModel>
+                </span>
+                <span>
+                    <label >    </label>
+
+                    <select name="genre" ngModel style="color: black;">
+                        <option value="">--Choisir un genre--</option>
+                        <option value="M">M</option>
+                        <option value="F">F</option>
+                        
+                    </select>
+                    
+                    <!-- <input type="text"  required placeholder="Genre" name="genre" ngModel> -->
+                </span>
+                <span>
+                    <label >    </label>
+
+                    <select name="profil" ngModel style="color: black;">
+                        <option value="">--Choisir un profil--</option>
+                        <option value="admin">admin</option>
+                        <option value="superadmin">superadmin</option>
+                        
+                    </select>
+                </span>
+            </div><br>
+           
+            <div>  
+                <button type="submit" style="background-color: black; padding: 10px 50px;margin: 20px 120px; color: white;">Ajouter</button>
+            </div>
+        </form>
+    </div>  
+
+    
+</mat-card>
+    </div>
+  </div>

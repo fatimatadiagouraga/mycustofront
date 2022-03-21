@@ -54,6 +54,7 @@ button{
     letter-spacing: 1px;
     text-transform: uppercase;
     transition: transform 80ms ease-in;
+   
 }
 
 
@@ -65,7 +66,7 @@ button{
 
 .sign-up-container{
     left: 0px;
-    width: 50%;
+    width: 60%;
     z-index: 1;
     box-shadow: 0 14px 28px rgb(73, 72, 72);
     h1{
@@ -79,13 +80,13 @@ button{
     margin-top: 20px;
     position: absolute;
     top: 0;
-    left: 50%;
-    width: 50%;
+    left: 60%;
+    width: 40%;
     height: 70vh;
-    box-shadow: 0 14px 28px rgb(73, 72, 72);
+    // box-shadow: 0 14px 28px rgb(73, 72, 72);
     img{
         left: 0px;
-        height: 58vh;   
+        height: 40vh;   
     }
 
 }

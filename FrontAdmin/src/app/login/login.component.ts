@@ -1,9 +1,8 @@
 import { Component, OnInit } from '@angular/core';
-import { ServicesService } from '../services.service';
+import { ServiceService } from '../services/service.service'; 
 import { MatSnackBar } from '@angular/material/snack-bar';
 import { Router } from '@angular/router';
 import { NgForm } from '@angular/forms';
-
 
 @Component({
   selector: 'app-login',
@@ -11,8 +10,9 @@ import { NgForm } from '@angular/forms';
   styleUrls: ['./login.component.scss']
 })
 export class LoginComponent implements OnInit {
-  loginInfo:any;
-  constructor(private service:ServicesService,public route:Router,public snack:MatSnackBar) { }
+  loginInfo: any;
+
+  constructor(private service:ServiceService,public route:Router,public snack:MatSnackBar) { }
 
   ngOnInit(): void {
   }
@@ -26,13 +26,13 @@ export class LoginComponent implements OnInit {
 
         localStorage.setItem('isLogin', JSON.stringify(this.loginInfo));
         localStorage.setItem('loginStatus', JSON.stringify(loginStatus));
-        location.replace("/commande");
+        this.route.navigateByUrl('/acceuil')
       }
           else{
-        this.snack.open('erreur','X', {
+        this.snack.open('ERREUR','Mot de passe ou login incorrect', {
           duration: 3000
         });
-            this.route.navigate(["/"])
+            this.route.navigate(["/login"])
             let loginStatus = false;
             localStorage.setItem('loginStatus', JSON.stringify(loginStatus));
             console.log("login non connecter");
@@ -44,6 +44,5 @@ export class LoginComponent implements OnInit {
         
         )
       }
-    
-  }
-  
+
+}
