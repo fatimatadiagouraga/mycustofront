@@ -19,41 +19,50 @@
     <div class="container-fluid">
 
 <mat-card style="background-color: rgb(255, 255, 255);border-radius: 30px;">
+  <mat-icon (click)="close()">cancel</mat-icon>
     <div>
         <h1 style="text-align: center;color: black;font-weight: bold;">Modifier Admin</h1>
         <form  [formGroup]="adminAmodif"  (submit)="modifAdmin()"  class="form" >
             <div>
                 <span>
-               
+                    <!-- <label for="" >Nom</label> -->
                     <input type="text"  required placeholder="Nom" formControlName="nom">
                 </span>
                 <span>
-                   
+                   <!-- <label for="">Prenom</label> -->
                     <input type="text"  required placeholder="Prenom" formControlName="prenom">
-                </span>
+                </span><br>
                 <span>
-                    
+                    <!-- <label for="">Adresse</label> -->
                     <input type="text"  required placeholder="Adresse" formControlName="adresse">
                 </span>
                 <span>
+                  <!-- <label for="">Tel</label> -->
                     <input type="number"  required placeholder="Tel" formControlName="telephone" >
-                </span>
+                </span><br>
                 <span>
+                  <!-- <label for="">Email</label> -->
                     <input type="email"  required placeholder="Email" formControlName="email">
                 </span>
                 <span>
+                  <!-- <label for="">Log</label> -->
                     <input type="text"  required placeholder="Login" formControlName="login">
                 </span>
-                <span>
+                <span><br>
+                  <select type="text"  required placeholder="Genre" formControlName="genre" style="color: black;">
+                    <option value="">--Choisir un genre--</option>
+                    <option value="M">M</option>
+                    <option value="F">F</option>
                     
-                    <input type="text"  required placeholder="Genre" formControlName="genre">
+                </select>
+                    <!-- <input type="text"  required placeholder="Genre" formControlName="genre"> -->
                 </span>
                 <span>
                     
                     <input type="text"  required placeholder="Profil" formControlName="profil">
                 </span>
                 <div style="display: flex;justify-content: center;">  
-                    <button type="submit" style="background-color: black; padding: 10px 50px;margin: 20px 15px;color: aliceblue;">Enregistrer</button>
+                    <button type="submit" style="background-color: black; padding: 10px 3px;margin: 5px 15px;color: aliceblue;">Enregistrer</button>
                 </div>
             </div><br>
            

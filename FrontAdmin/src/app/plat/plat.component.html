@@ -25,8 +25,8 @@
 
       <!-- <mat-icon class="plus" routerLink="/ajoutPlat">add_circle_outline</mat-icon><br><br> -->
       <!-- <mat-icon class="corbeille">delete</mat-icon> -->
-      <i class=" fas fa-trash-alt" aria-hidden="true" style="font-size: 25px;color: red;float: right;" >Corbeille</i><br><br>
-      <i class=" fas fa-plus" aria-hidden="true" style="font-size: 25px;color: orange;float:right" routerLink="/ajoutPlat">Ajout</i>
+      <i class=" fas fa-trash-alt" aria-hidden="true" style="font-size: 20px;color: red;float: right;" >Corbeille</i><br><br>
+      <i class=" fas fa-plus" aria-hidden="true" style="font-size: 20px;color: orange;float:right" routerLink="/ajoutPlat">Ajouter</i>
       
       <h1 style="text-align: center;font-weight: bold;">Liste des plats</h1> 
     </div>
@@ -37,10 +37,10 @@
           <mat-card class="col-md-3 " *ngFor="let plat of listplat">
             <mat-card-header>
               <p class="icon">
-              <i class="fas fa-pencil-alt" aria-hidden="true" style="font-size: 25px;color: orange;" (click)="btnmodif(plat.id_plat)"></i><br>
+              <i class="fas fa-pencil-alt" aria-hidden="true" style="font-size: 20px;color: orange;" (click)="btnmodif(plat.id_plat)"></i><br>
                 
                 <!-- <mat-icon style="color: orange;" (click)="btnmodif(plat.id_plat)" >create</mat-icon><br><br> -->
-              <i class=" fas fa-trash-alt" aria-hidden="true" style="font-size: 25px;color: red;" (click)="SuppPlat(plat.id_plat)"></i>
+              <i class=" fas fa-trash-alt" aria-hidden="true" style="font-size: 20px;color: red;" (click)="SuppPlat(plat.id_plat)"></i>
 
                 <!-- <mat-icon style="color: red;" (click)="SuppPlat(plat.id_plat)">delete</mat-icon> -->
               </p>

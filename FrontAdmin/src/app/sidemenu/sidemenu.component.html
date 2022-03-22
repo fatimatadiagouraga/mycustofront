@@ -6,52 +6,50 @@
                 <nav class="sidebar-nav">
                     <ul id="sidebarnav">
                         <!-- User Profile-->
-                        <li class="sidebar-item pt-2">
-                            <div >
-                                <div style="display:flex;justify-content: center;align-items: center;justify-items: center">
-                                    <img src="assets/images/images.jpg" alt="" style="height: 60PX;width: 60px;">
-                                </div>
-                                <div style="display:flex;justify-content: center;align-items: center;justify-items: center">
-                                    <p class="name" style="font-size: 15px;">{{user?.prenom}} {{user?.nom}}</p><br>
-                                </div>
-                            </div>
-                            
-                            <mat-divider style="margin-top: 60px;background-color: black;"></mat-divider><br>
-                        </li> 
+                        <div style="display: flex;justify-content: center;border-bottom: black 2px solid;">
+                            <a class="sidebar-link waves-effect waves-dark sidebar-link"  aria-expanded="false" style="margin: auto;">
+                               
+                                    <!-- <img src="assets/images/images.jpg" alt="" > -->
+                                    <i class="  fas fa-user"  aria-hidden="true" style="font-size: 53px;color: black;" >  </i><br>
+                                    <i aria-hidden="true" style="color: black;">{{user?.prenom}} </i><br>
+                                    <i aria-hidden="true" style="color: black;"> {{user?.nom}}</i>
+                                
+                            </a>                                                              
+                        </div><br><br><br>
                         <li class="sidebar-item pt-2"> 
                             
-                            <a class="sidebar-link waves-effect waves-dark sidebar-link" href="listAdmin"
-                                aria-expanded="false" *ngIf="user?.profil==='admin'" style="color: black;" sty>
-                                <i class="  fas fa-users"  aria-hidden="true" style="font-size: 30px; color: black;">  </i>
-                                <span class="hide-menu" style="font-size: 15px; font-weight: bold;margin-bottom: 10%;">  GESTION DES ADMINS</span>
+                            <a class="sidebar-link waves-effect waves-dark sidebar-link" href="listAdmin" aria-expanded="false" *ngIf="user?.profil==='superadmin'" style="color: black;">
+                                <i class="  fas fa-users"  aria-hidden="true" style="font-size: 30px; color: rgb(29, 27, 27);">  </i>
+                                
+                                <span class="hide-menu" style="font-size: 15px;margin-left: 10px;color: black;font-weight: 500;">  GESTION DES ADMINS</span>
                                 
                         
                             </a>
                         </li>
                         <li class="sidebar-item pt-2">
                             <a class="sidebar-link waves-effect waves-dark sidebar-link" href="commande" aria-expanded="false" style="color: black;">
-                                <i class="  fas fa-book"  aria-hidden="true" style="font-size: 30px; color: black;">  </i>
-                                <span class="hide-menu" style="font-size: 15px; font-weight: bold;margin-bottom: 10%;">  GESTION DES COMMANDES</span>
+                                <i class="  fas fa-book"  aria-hidden="true" style="font-size: 30px; color: black">  </i>
+                                <span class="hide-menu" style="font-size: 15px; margin-left: 16px;color: black;font-weight: 500;">  GESTION DE COMMANDE</span>
                              
                             </a>
                         </li>
-                        <li class="sidebar-item">
+                        <li class="sidebar-item pt-2">
                             <a class="sidebar-link waves-effect waves-dark sidebar-link" href="menu" aria-expanded="false" style="color: black;">
                                 <i class="  far fa-building"  aria-hidden="true" style="font-size: 30px;color: black;">  </i>
-                                <span class="hide-menu" style="font-size: 15px; font-weight: bold;margin-bottom: 10%;">  GESTION DES MENUS</span>
+                                <span class="hide-menu" style="font-size: 15px; margin-left: 10px;color: black;font-weight: 500;">  GESTION DE MENUS</span>
                                 
                                   
                             </a>
                         </li>
                        
-                        <li class="sidebar-item">
+                        <li class="sidebar-item pt-2">
                             <a class="sidebar-link waves-effect waves-dark sidebar-link" href="plat" aria-expanded="false" style="color: black;"> 
-                                <i class=" fas fa-utensils"  aria-hidden="true" style="font-size: 30px;color: black;">  </i>
-                                <span class="hide-menu" style="font-size: 15px; font-weight: bold;margin-bottom: 10%;">  GESTION DES PLATS</span>
+                                <i class=" fas fa-utensils"  aria-hidden="true" style="font-size: 30px;color: black">  </i>
+                                <span class="hide-menu" style="font-size: 15px; margin-left: 10px;color: black;font-weight: 500;">  GESTION DE PLATS</span>
 
                             </a>
                         </li>
-                        <li class="sidebar-item" style="margin-top: 50%;">
+                        <li class="sidebar-item" style="margin-top: 15%;">
                             <a class="sidebar-link waves-effect waves-dark sidebar-link" href=" "
                                 aria-expanded="false">
                                     <img src="..\assets\images\off.png" alt="" srcset="" style="height: 40PX;width: 40px;">

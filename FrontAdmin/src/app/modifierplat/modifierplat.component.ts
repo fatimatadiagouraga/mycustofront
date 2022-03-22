@@ -1,7 +1,8 @@
 import { Component, Inject, OnInit } from '@angular/core';
 import { FormBuilder, FormControl, FormGroup } from '@angular/forms';
-import { MAT_DIALOG_DATA } from '@angular/material/dialog';
+import { MatDialog, MAT_DIALOG_DATA } from '@angular/material/dialog';
 import { MatSnackBar } from '@angular/material/snack-bar';
+import { Router } from '@angular/router';
 import { ServiceService } from '../services/service.service';
 
 @Component({
@@ -13,7 +14,12 @@ export class ModifierplatComponent implements OnInit {
   monPlat: FormGroup = new FormGroup({});
  
 
-  constructor(@Inject(MAT_DIALOG_DATA) public data: any, private formBuilder: FormBuilder,private service :ServiceService,public snackbar:MatSnackBar) { }
+  constructor(@Inject(MAT_DIALOG_DATA) public data: any,
+   private formBuilder: FormBuilder,
+   private service :ServiceService,
+   public snackbar:MatSnackBar,
+   public route:Router,
+   public dialogue:MatDialog) { }
 
   ngOnInit(): void {
 
@@ -38,9 +44,16 @@ export class ModifierplatComponent implements OnInit {
       duration: 3000
 
   });
+  
    });
      this.data.reset();
+     
+     this.route.navigate(['/plat'])
   }
+
+  close(){
+    this.dialogue.closeAll();
+    }
  
 
 

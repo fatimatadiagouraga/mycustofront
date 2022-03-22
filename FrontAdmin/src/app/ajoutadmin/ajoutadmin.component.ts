@@ -2,6 +2,7 @@ import { Component, OnInit } from '@angular/core';
 import { NgForm } from '@angular/forms';
 import { ServiceService } from '../services/service.service';
 import { MatSnackBar } from '@angular/material/snack-bar';
+import { Router } from '@angular/router';
 
 
 
@@ -12,22 +13,33 @@ import { MatSnackBar } from '@angular/material/snack-bar';
 })
 export class AjoutadminComponent implements OnInit {
 
-  constructor(private Service :ServiceService,public snackbar:MatSnackBar) { }
+  constructor(private Service :ServiceService,public snackbar:MatSnackBar,private route: Router) { }
 
   ngOnInit(): void {
+      
+
   }
   AjoutAdmin(dataAdmin : NgForm){
     this.Service.AjouterAdmin(dataAdmin.value).subscribe(data =>{
      console.log(dataAdmin);
-     this.snackbar.open('Ajouter avec succès',' !!!', {
-      duration: 3000
-
-  });
+     if (data) {
+       this.snackbar.open('Ajouter avec succès',' !!!', {
+        duration: 3000
+       });
+       dataAdmin.reset();
+       this.route.navigate(['/listAdmin'])
+     } else {
+      this.snackbar.open('non',' !!!', {
+        duration: 3000
+       });
+       
+     }
+     
   
  
 
     })
-     dataAdmin.reset();
+    
 
   }
 

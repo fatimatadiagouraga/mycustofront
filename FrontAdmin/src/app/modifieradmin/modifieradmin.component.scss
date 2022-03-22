@@ -1,14 +1,14 @@
 
 .form{
-    display: block;
+    display: flex;
     justify-content: center;
     justify-items: center;
-    margin: 20px 50px;
+    margin: 0px 20px;
 }
 .form input{
     padding-right: 40px;
-    padding-top: 12px;
-    padding-bottom: 12px;
+    padding-top: 5px;
+    padding-bottom: 15px;
     margin: 5px 10px;
     border-top: 0px;
     border-left: 0px;
@@ -23,8 +23,8 @@
 }
 .form select{
     padding-right: 30px;
-    padding-top: 12px;
-    padding-bottom: 12px;
+    padding-top: 5px;
+    padding-bottom: 5px;
     margin: 5px 10px;
     border-top: 0px;
     border-left: 0px;
@@ -37,4 +37,5 @@
     
     
 }
+
 

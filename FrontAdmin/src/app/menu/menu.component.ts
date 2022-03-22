@@ -14,7 +14,10 @@ export class MenuComponent implements OnInit {
   menus :any;
   boiterecup: any;
 
-  constructor(private s :ServiceService,public snackbar :MatSnackBar,private route:ActivatedRoute,public dialogue:MatDialog) { }
+  constructor(private s :ServiceService,
+    public snackbar :MatSnackBar,
+    private route:ActivatedRoute,
+    public dialogue:MatDialog) { }
 
   ngOnInit(): void {
     this.listMenu();    

@@ -1,6 +1,8 @@
 import { Component, OnInit } from '@angular/core';
 import { NgForm } from '@angular/forms';
+import { MatDialog } from '@angular/material/dialog';
 import { MatSnackBar } from '@angular/material/snack-bar';
+import { Router } from '@angular/router';
 
 import { ServiceService } from '../services/service.service';
 
@@ -22,7 +24,10 @@ export class AjoutplatComponent implements OnInit {
   md: any;
   platr: any;
 
-  constructor(private service :ServiceService, private snackbar: MatSnackBar) { }
+  constructor(private service :ServiceService,
+     private snackbar: MatSnackBar,
+     public route:Router,
+     public dialogue:MatDialog) { }
 
   ngOnInit(): void {
 
@@ -56,6 +61,7 @@ export class AjoutplatComponent implements OnInit {
   
         })
                 dataplat.reset();
+                this.route.navigate(['/plat'])
 
 
 
@@ -74,5 +80,7 @@ export class AjoutplatComponent implements OnInit {
 
     })
   }
+
+  
 
 }

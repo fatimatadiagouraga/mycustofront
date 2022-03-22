@@ -17,9 +17,12 @@
       <!-- /.col-lg-12 -->
     </div>
     <div class="container-fluid">
+     
 <mat-card style="background-color: rgb(193, 196, 196);border-radius: 30px;margin-top: 5%;">
+ 
     <div>
-        <h1 style="text-align: center;color: black;font-weight: bold;">Modification Plat</h1>
+      <mat-icon (click)="close()">cancel</mat-icon>
+        <h1 style="text-align: center;color: black;font-weight: bold;">Modification Menu</h1>
         <form  class="form" #data="ngForm" (onSubmit)="modifmenu(data)">
             <div>
                 <label for=""></label>
@@ -59,7 +62,7 @@
             </div> -->
             <div>
                 
-                <button type="submit" style="background-color: black; padding: 10px 20px;margin: 20px 120px;">Modifier</button>
+                <button type="submit" style="background-color: black;color: aliceblue; padding: 10px 20px;margin: 20px 120px;">Modifier</button>
             </div>
         </form>
 

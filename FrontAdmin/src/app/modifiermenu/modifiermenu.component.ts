@@ -1,5 +1,5 @@
 import { Component, Inject, OnInit } from '@angular/core';
-import { MAT_DIALOG_DATA } from '@angular/material/dialog';
+import { MatDialog, MAT_DIALOG_DATA } from '@angular/material/dialog';
 import { ServiceService } from '../services/service.service';
 import { MatSnackBar } from '@angular/material/snack-bar';
 
@@ -11,7 +11,9 @@ import { MatSnackBar } from '@angular/material/snack-bar';
 export class ModifiermenuComponent implements OnInit {
 
   menu : any;
-  constructor(@Inject(MAT_DIALOG_DATA) public menuC: any,private service:ServiceService,public snackbar:MatSnackBar) { }
+  constructor(@Inject(MAT_DIALOG_DATA) public menuC: any,private service:ServiceService,
+  public snackbar:MatSnackBar,
+  public dialogue:MatDialog) { }
 
   ngOnInit(): void {
    this.menu = this.menuC.route;
@@ -30,6 +32,10 @@ export class ModifiermenuComponent implements OnInit {
     });
       
     })
+  }
+
+  close(){
+  this.dialogue.closeAll();
   }
 
 }

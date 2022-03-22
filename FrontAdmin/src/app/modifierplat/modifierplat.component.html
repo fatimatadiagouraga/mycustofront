@@ -18,8 +18,9 @@
     <div class="container-fluid">
 
 <mat-card style="background-color: rgb(193, 196, 196);border-radius: 30px;">
+  <mat-icon (click)="close()">cancel</mat-icon>
     <div>
-        <h1 style="text-align: center;color: black;font-weight: bold;">Modification Plat</h1>
+        <h1 style="text-align: center;color: black;font-weight: bold;">Modification </h1>
         <form [formGroup]="monPlat" (submit)="modifplat()" class="form">
             <div>
                 <label for="">Nom</label>
@@ -36,7 +37,7 @@
            
             <div>
                 
-                <button type="submit" style="background-color: white; color: black; padding: 10px 20px;margin: 20px 120px;">Modifier</button>
+                <button type="submit" style="background-color: white; color: black; padding: 10px 20px;margin: 20px 50px;">Modifier</button>
             </div>
         </form>
     </div>    

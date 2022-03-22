@@ -1,9 +1,10 @@
 import { Component, OnInit,Inject } from '@angular/core';
 
 import { FormBuilder, FormControl, FormGroup } from '@angular/forms';
-import { MAT_DIALOG_DATA} from '@angular/material/dialog';
+import { MatDialog, MAT_DIALOG_DATA} from '@angular/material/dialog';
 import { ServiceService } from '../services/service.service'; 
 import { MatSnackBar } from '@angular/material/snack-bar';
+import { Router } from '@angular/router';
 
 @Component({
   selector: 'app-modifieradmin',
@@ -16,7 +17,9 @@ export class ModifieradminComponent implements OnInit {
   constructor(@Inject(MAT_DIALOG_DATA) public admind: any,
   private formBuilder: FormBuilder,
   private service :ServiceService,
-  public snackbar:MatSnackBar) { }
+  public snackbar:MatSnackBar,
+  public route:Router,
+  private dialogue:MatDialog) { }
 
   ngOnInit(): void {
     this.modifAdmin();
@@ -37,12 +40,29 @@ export class ModifieradminComponent implements OnInit {
 
   modifAdmin(){
     this.service.ModifAdmin(this.adminAmodif.value,this.admind.route.id_admin).subscribe((data) => {
-      this.snackbar.open('Modifier avec succès','!!!', {
-        duration: 3000
+    //   this.snackbar.open('Modifier avec succès','!!!', {
+    //     duration: 3000
   
-    });
-    })
+    // });
+    if (data===null) {
+      this.snackbar.open('non',' !!!', {
+        duration: 3000
+      });
+     } else {
+      this.snackbar.open('Modifier avec succès',' !!!', {
+        duration: 3000
+        
+       });
+       
     this.adminAmodif.reset();
+    this.route.navigate(['/listAdmin'])
+
+  }
+  })
   }   
+
+  close(){
+    this.dialogue.closeAll();
+    }
 
 }

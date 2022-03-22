@@ -20,7 +20,7 @@
     <div class="container-fluid">
 
 <div style="margin-top: 8%;">
-  <i class=" fas fa-plus" aria-hidden="true" style="font-size: 30px;color: orange;float:right" routerLink="/ajoutAdmin">Ajout</i>
+  <i class=" fas fa-plus" aria-hidden="true" style="font-size: 20px;color: orange;float:right" routerLink="/ajoutAdmin">Ajouter</i>
 
   <!-- <mat-icon class="plus" routerLink="/ajoutAdmin" style="float:right">add_circle_outline</mat-icon> -->
 
@@ -35,14 +35,14 @@
         <td  style="font-size: 20px;padding: 20px 20px;border-bottom: 4px solid white;">{{admin.telephone}}</td>
         <td>
             <div class="icon">
-              <i class="fas fa-pencil-alt" aria-hidden="true" style="font-size: 30px;color: orange;" (click)="btnmodif(admin.id_admin)"></i>
+              <i class="fas fa-pencil-alt" aria-hidden="true" style="font-size: 20px;color: orange;" (click)="btnmodif(admin.id_admin)"></i>
                 <!-- <mat-icon style="color: orange;"  (click)="btnmodif(admin.id_admin)">create</mat-icon><br> -->
                
             </div>
         </td>
         <td>
             <div class="icon">
-              <i class=" fas fa-trash-alt" aria-hidden="true" style="font-size: 30px;color: red;" (click)="SuppAdmin(admin.id_admin)"></i>
+              <i class=" fas fa-trash-alt" aria-hidden="true" style="font-size: 20px;color: red;" (click)="SuppAdmin(admin.id_admin)"></i>
                  
                 <!-- <mat-icon style="color: red;" (click)="SuppAdmin(admin.id_admin)" >delete</mat-icon> -->
             </div>
