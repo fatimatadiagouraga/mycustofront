@@ -72,6 +72,10 @@ export class ServiceService {
   listemenu(){
     return this.http.get(this.apiMenu+'listeMenu');
   }
+  //Plats par menu
+  listePlatMenu(id_menu:any){
+    return this.http.get('http://localhost:8080/mycustoapi/plat/listParMenu/'+id_menu);
+  }
 
   menuparid(id_menu:any){
     return this.http.get(this.apiMenu+'menubyId/'+id_menu);
@@ -89,10 +93,60 @@ export class ServiceService {
     return this.http.put(this.apiMenu+'modifierMenu/'+id_menu,menumodif)
   }
   
-  //Api commande
+  //Api commande liste de commande en attente
   liste(){
     return this.http.get(this.apiCommande+'listeCommande');
   }
+
+
+//mettre commandes Encours (button)
+CommandeEncours(id_commande:any){
+  return this.http.delete(this.apiCommande+'encours'+'/'+id_commande);
+}
+
+
+//liste commandes en cours
+ListeCommandeEncours(){
+  return this.http.get(this.apiCommande+'commandeEnCours');
+}
+
+
+//liste commandes livrées
+ListeCommandeLivrées(){
+  return this.http.get(this.apiCommande+'commandeLivre');
+}
+
+
+
+
+
+//Les corbeilles
+corbeMenu(){
+  return this.http.get(this.apiMenu+'corbeille');
+}
+
+corbePlat(){
+  return this.http.get(this.apiPlat+'corbeille');
+}
+
+corbeAdmin(){
+ return this.http.get(this.apiAdmin+'corbeille');
+}
+
+//restaurer
+
+restaureMenu(id_menu:any){
+  return this.http.delete(this.apiMenu+'restaureMenu'+'/'+id_menu);
+}
+
+restaurePlat(id_plat:any){
+  return this.http.delete(this.apiPlat+'restaurePlat'+'/'+id_plat);
+}
+
+restaureAdmin(id_admin:any){
+ return this.http.delete(this.apiAdmin+'restaureAdmin'+'/'+id_admin);
+}
+
 
 
 }

@@ -1,0 +1,41 @@
+
+<ion-header >
+  <ion-toolbar color="warning">
+    <ion-buttons slot="start">
+      <ion-button type="submit" [routerLink]="['/modifier-info-client/', client.id_client]">
+        <ion-icon name="create"></ion-icon>
+      </ion-button>
+    </ion-buttons>
+
+    <ion-buttons slot="end">
+      <ion-button  (click)="logOut()">
+        <ion-icon name="power"></ion-icon>
+      </ion-button>
+    </ion-buttons>
+  </ion-toolbar>
+
+  <div class="header">
+
+    <h4 style="margin-top: 60px;text-align: center;">{{client?.nom}}   {{client.prenom}}</h4>
+    <h2 style="color: black;">{{client.telephone}}</h2>
+  </div>
+  <div class="flex">
+    <div class="border-blue">
+      <div class="border-white">
+        <div class="img-box">
+          <ion-img src="../assets/Images/menudujour.jpg"></ion-img>
+        </div>
+      </div>
+    </div>
+  </div>
+
+</ion-header>
+<ion-content  fullscreen="true">
+
+
+<h2>Vous etes excepttionnel</h2>
+</ion-content>
+<ion-item>
+  <button (click)="supprimer(client.id_client)">Supprimer mon compte</button>
+</ion-item>
+

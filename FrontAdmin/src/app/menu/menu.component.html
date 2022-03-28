@@ -32,20 +32,21 @@
     <div class="container" >
       <div class="row" >
           <mat-card class="col-md-4" *ngFor="let menu of menus">
-                <p class="icon">
-              <i class="fas fa-pencil-alt" aria-hidden="true" style="font-size: 20px;color: orange;" (click)="menuparid(menu.id_menu)"></i><br>
+              <p class="icon">
+                <i class="fas fa-pencil-alt" aria-hidden="true" style="font-size: 20px;color: orange;" (click)="menuparid(menu.id_menu)"></i><br>
 
                     <!-- <mat-icon style="color: orange;" (click)="menuparid(menu.id_menu)">create</mat-icon><br> -->
-              <i class=" fas fa-trash-alt" aria-hidden="true" style="font-size: 20px;color: red;" (click)="supmenu(menu.id_menu)"></i>
+                <i class=" fas fa-trash-alt" aria-hidden="true" style="font-size: 20px;color: red;" (click)="supmenu(menu.id_menu)"></i>
 
                     <!-- <mat-icon style="color: red;" (click)="supmenu(menu.id_menu)">delete</mat-icon> -->
-                </p>
+              </p><br>
                 <!-- <img src="#" alt="" srcset="" style="width: 50px;height: 50px;"> -->
                 <h2 style="font-weight: bold;color:black ;text-align: center;text-decoration: underline 4px rgb(252, 250, 249);">{{menu.nom_menu}}</h2>   
                 <h3>{{menu.menujour}}</h3>            
                 <p>{{menu.description_menu}}</p>  
                 <h2>{{menu.d}}</h2>
-
+                <mat-icon  [routerLink]="['/platParMenu',menu.id_menu]" style="float: right;">add_circle</mat-icon>
+               
           </mat-card>        
       </div>
     </div>

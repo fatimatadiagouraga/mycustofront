@@ -26,14 +26,26 @@
         <mat-card style="width:100% ;justify-items: center;margin-left: 0px;background-color: rgb(240, 236, 232);">
         <form #dataplat="ngForm" (ngSubmit)="ajoutPlat(dataplat)" class="container">
                 <div class="input">                          
-                        <input type="text" name="nom_plat"  ngModel required placeholder="Nom" >
-                  
-                        <input type="number" ngModel name="prix_plat" ngModel required placeholder="Prix">
+                        <input type="text" name="nom_plat" #nom="ngModel" pattern=".{2,20}"  ngModel required placeholder="Nom" >
+                        <div style="font-size: 10px;margin-top: 10px; color: rgb(247, 12, 12);" [hidden]="nom.valid || nom.pristine" class="alert alert-danger">
+                          Respecter le Format svp : max 20 caracteres
+                       </div>
 
-                        <input type="text" ngModel name="description" ngModel required placeholder="description">
 
-                        <input type="text" ngModel name="ingredients" ngModel required placeholder="ingredient">
+                        <input type="number" ngModel name="prix_plat" #prix_plat="ngModel" pattern="[0-9]{4,6}" ngModel required placeholder="Prix">
+                        <div style="font-size: 10px;margin-top: 10px; color: rgb(247, 12, 12);" [hidden]="prix_plat.valid ||prix_plat.pristine" class="alert alert-danger">
+                          Respecter le Format svp : min 4 chiffres
+                       </div>
 
+                        <input type="text" ngModel #description="ngModel" pattern=".{2,255}" name="description" ngModel required placeholder="description">
+                        <div style="font-size: 10px;margin-top: 10px; color: rgb(247, 12, 12);" [hidden]="description.valid ||description.pristine" class="alert alert-danger">
+                          Respecter le Format svp : min 20 caracteres max 255
+                       </div>
+
+                        <input type="text" ngModel #ingredients="ngModel" pattern=".{2,255}"  name="ingredients" ngModel required placeholder="ingredient">
+                        <div style="font-size: 10px;margin-top: 10px; color: rgb(247, 12, 12);" [hidden]="ingredients.valid ||ingredients.pristine" class="alert alert-danger">
+                          Respecter le Format svp : min 20 caracteres max 255
+                       </div>
                         <input type="file" #file ngModel name="image" ngModel (change)="lirephoto(file.files)" required  accept=".jpg, .jpeg, .png" placeholder="Choisir une Photo" class="file">
 
                         <select name="menu" ngModel style="color: black;padding-top: 15px;  padding-bottom: 20px;" class="menu">
@@ -43,7 +55,7 @@
                 </div>        
                        
                 <div style="display: flex;justify-content: center;">
-                     <button type="submit" style="background-color: black; padding: 10px 30px;margin: 20px 120px;color: white;">Ajouter</button>
+                     <button type="submit" [disabled]="dataplat.form.invalid" style="background-color: black; padding: 10px 30px;margin: 20px 120px;color: white;">Ajouter</button>
                 </div>
         </form>
         </mat-card>

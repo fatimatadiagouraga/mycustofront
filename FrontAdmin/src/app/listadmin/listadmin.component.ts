@@ -41,6 +41,10 @@ export class ListadminComponent implements OnInit {
     );
     
   }
+  
+
+
+  //modification
 
   btnmodif(btn:any){
   this.s.adminById(btn).subscribe(dataAdmin => {

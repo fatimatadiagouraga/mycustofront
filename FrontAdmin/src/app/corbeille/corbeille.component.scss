@@ -1,0 +1,66 @@
+//menu
+    .example-card {
+        max-width: 400px;
+        margin-bottom: 8px;
+        width: 200px;
+        background-color: white;
+        margin-left: 20px;
+      }
+
+      .example-card:hover {
+        background-color: rgb(206, 201, 201);
+      }
+
+
+     .example-card{
+         display: block;
+     } 
+
+     //admins
+
+     .demo-table {
+        width: 100%;
+        
+      }
+///plats
+
+
+    .icon{
+        display:block;
+        float:right;
+        padding: auto;
+        background-color: rgb(231, 227, 227);
+        
+        
+       
+    }
+    .icon:hover{
+       
+        background-color: rgb(255, 251, 251);
+        
+        
+       
+    }
+   
+.col-md-3 {
+    display: block;
+    flex-direction: column;
+    width: 320px;
+   
+    margin: 10px 40px;
+    background-color: white;
+
+  }
+
+
+  .col-md-3:hover{
+      background-color: rgb(205, 207, 207);
+  }
+  
+  .image {
+      
+      width: 100%;
+      height: 90px;
+    background-size: cover;
+  }
+  

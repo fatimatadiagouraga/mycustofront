@@ -13,13 +13,13 @@ import { ModifieradminComponent } from './modifieradmin/modifieradmin.component'
 import { ModifiermenuComponent } from './modifiermenu/modifiermenu.component';
 import { ModifierplatComponent } from './modifierplat/modifierplat.component';
 import { PlatComponent } from './plat/plat.component';
+import { PlatParMenuComponent } from './plat-par-menu/plat-par-menu.component';
+import { CorbeilleComponent } from './corbeille/corbeille.component';
 
 const routes: Routes = [
   {path:"", component:LoginComponent},
   {path:'acceuil', component:AcceuilComponent},
   {path:'header', component:HeaderComponent},
- 
-  // {path: "", redirectTo: "login", pathMatch: "full" },
   {path:"commande", component:CommandeComponent},
   {path:"menu", component:MenuComponent},
   {path:"plat", component:PlatComponent},
@@ -30,6 +30,10 @@ const routes: Routes = [
   {path:"ajoutAdmin", component:AjoutadminComponent},
   {path:"modifierAdmin", component:ModifieradminComponent},
   {path:"listAdmin", component:ListadminComponent},
+  {path:"platParMenu/:id", component:PlatParMenuComponent},
+  {path:"corbeille", component:CorbeilleComponent},
+
+
 
 
 ];

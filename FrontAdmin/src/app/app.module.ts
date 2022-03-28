@@ -36,6 +36,9 @@ import { AjoutmenuComponent } from './ajoutmenu/ajoutmenu.component';
 import { ModifiermenuComponent } from './modifiermenu/modifiermenu.component';
 import { LoginComponent } from './login/login.component';
 import { CommandeComponent } from './commande/commande.component';
+import { PlatParMenuComponent } from './plat-par-menu/plat-par-menu.component';
+import { CorbeilleComponent } from './corbeille/corbeille.component';
+import { Ng2SearchPipeModule } from 'ng2-search-filter';
 
 @NgModule({
   declarations: [
@@ -54,7 +57,9 @@ import { CommandeComponent } from './commande/commande.component';
          AjoutmenuComponent,
          ModifiermenuComponent,
          LoginComponent,
-         CommandeComponent
+         CommandeComponent,
+         PlatParMenuComponent,
+         CorbeilleComponent
   ],
   imports: [
     BrowserModule,
@@ -74,7 +79,8 @@ import { CommandeComponent } from './commande/commande.component';
     ReactiveFormsModule,
     MatSnackBarModule,
     MatSelectModule,
-    MatFormFieldModule
+    MatFormFieldModule,
+    Ng2SearchPipeModule
   ],
   providers: [],
   bootstrap: [AppComponent]

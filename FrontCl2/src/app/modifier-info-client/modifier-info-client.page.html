@@ -1,0 +1,85 @@
+<ion-header>
+  <ion-toolbar color="warning">
+    <ion-buttons>
+      <ion-button routerLink="tabs/tabs/profil">
+        <ion-icon name="caret-back-outline"></ion-icon>
+      </ion-button>
+    </ion-buttons>
+    <ion-title>Modifier ses informations</ion-title>
+  </ion-toolbar>
+</ion-header>
+<ion-content fullscreen="true">
+  <form #update="ngForm" (ngSubmit)="modifierClt(client)">
+    <ion-item>
+      <ion-label position="floating">Nom</ion-label>
+      <ion-input
+        type="text"
+        name="nom"
+        #nom="ngModel"
+        [(ngModel)]="client.nom"
+      ></ion-input>
+    </ion-item>
+    <ion-item>
+      <ion-label position="floating">Prenom</ion-label>
+      <ion-input
+        type="text"
+        name="prenom"
+        #prenom="ngModel"
+        [(ngModel)]="client.prenom"
+      ></ion-input>
+    </ion-item>
+    <ion-item>
+      <ion-label position="floating">Email</ion-label>
+      <ion-input
+        type="email"
+        name="email"
+        #email="ngModel"
+        [(ngModel)]="client.email"
+      ></ion-input>
+    </ion-item>
+    <ion-item>
+      <ion-label position="floating">Tel</ion-label>
+      <ion-input
+        type="number"
+        ngModel
+        name="telephone"
+        #telephone="ngModel"
+        [(ngModel)]="client.telephone"
+      ></ion-input>
+    </ion-item>
+    <ion-item>
+      <ion-label position="floating">Mot de passe</ion-label>
+      <ion-input
+        type="password"
+        ngModel
+        name="motdepasse"
+        #motdepasse="ngModel"
+        [(ngModel)]="client.motdepasse"
+      ></ion-input>
+    </ion-item>
+    <ion-item>
+      <ion-label position="floating">Adresse</ion-label>
+      <ion-input
+        type="text"
+        ngModel
+        name="adresse"
+        #adresse="ngModel"
+        [(ngModel)]="client.adresse"
+      ></ion-input>
+    </ion-item>
+    <ion-item>
+      <ion-label position="floating">Login</ion-label>
+      <ion-input
+        type="text"
+        ngModel
+        name="login"
+        #login="ngModel"
+        [(ngModel)]="client.login"
+      ></ion-input>
+    </ion-item>
+    <ion-button type="submit" expand="block" color="warning">
+      <ion-icon name="save"></ion-icon>
+      <span class="ion-margin">enregistrer</span>
+    </ion-button>
+  </form>
+</ion-content>

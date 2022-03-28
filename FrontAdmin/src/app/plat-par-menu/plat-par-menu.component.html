@@ -1,0 +1,47 @@
+
+
+<app-header></app-header>
+<app-sidemenu></app-sidemenu>
+  <div class="page-wrapper">
+    <div class="page-breadcrumb bg-white">
+      <div class="row align-items-center">
+       
+      </div>
+      
+    </div>
+    <div class="container-fluid">
+
+
+<body>
+
+    <div class="container">
+      <div class="row">
+          <!-- <h1 style="text-align: center;">Plat</h1> -->
+          <mat-card class="col-md-3 " *ngFor="let m of menus">
+            <mat-card-header>
+             
+              <mat-card-title>{{m.nom_menu}}</mat-card-title>
+              <mat-card-subtitle>{{m.prix_plat}} FCFA</mat-card-subtitle>
+              
+            </mat-card-header>
+            <img src="{{image}}  {{m.id_plat}}" alt="" srcset="" class="image"><br>
+            
+            <mat-card-content>
+              
+              <p><strong>Les ingredients :</strong>  {{m.ingredients}}</p>
+              <p style="font-size: medium;font-weight: 100;margin-top: 10%;">
+                {{m.description}} 
+              </p>
+            </mat-card-content>
+            
+          </mat-card>
+          
+          
+        </div>
+    </div>   
+</body>
+   
+    </div>
+  </div>
+   
+

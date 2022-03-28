@@ -28,29 +28,52 @@
             <div>
                 <span>
                
-                    <input type="text"  required  minlength="2"  maxlength="20" placeholder="Nom" name="nom" ngModel>
+                    <input type="text" #nom="ngModel" pattern="[A-Za-z]{2,20}"   placeholder="Nom" name="nom" ngModel>
                 </span>
-                <span>
-                   
-                    <input type="text"  required placeholder="Prenom" name="prenom" ngModel>
+                <div style="font-size: 10px;margin-top: 10px; color: rgb(247, 12, 12);" [hidden]="nom.valid || nom.pristine" class="alert alert-danger">
+                    Respecter le Format svp : max 20 caracteres
+                </div>
+
+                <span>  
+                    <input type="text"  #prenom="ngModel" pattern="[A-Za-z]{2,20}" placeholder="Prenom" name="prenom" ngModel>
                 </span>
-                <span>
-                    
-                    <input type="text"  required placeholder="Adresse" name="adresse" ngModel>
-                </span>
-                <span>
-                    <input type="number" pattern="[0-4]{1,4}" required placeholder="Tel" name="telephone" ngModel >
-                </span>
-                <span>
-                    <input type="email"  required placeholder="Email" name="email" ngModel>
-                </span>
+                <div style="font-size: 10px;margin-top: 10px; color: rgb(247, 12, 12);" [hidden]="prenom.valid || prenom.pristine" class="alert alert-danger">
+                    Respecter le Format svp : max 20 caracteres
+                </div>
+
 
                 <span>
-                    <input type="text"  placeholder="Login" name="login" #login="ngModel" pattern="[0-9]*[A-Za-z]{4,10}" required ngModel>
+                    
+                    <input type="text"  #adresse="ngModel" pattern=".{3,30}" placeholder="Adresse" name="adresse" ngModel>
+                </span>
+                <div style="font-size: 10px;margin-top: 10px; color: rgb(247, 12, 12);" [hidden]="adresse.valid || adresse.pristine" class="alert alert-danger">
+                    Respecter le Format svp : max 30 caracteres
+                </div>
+
+
+                <span>
+                    <input type="number" #telephone="ngModel" pattern="[0-9]{8,14}" required placeholder="Tel" name="telephone" ngModel >
+                </span>
+                <div style="font-size: 10px;margin-top: 10px; color: rgb(247, 12, 12);" [hidden]="telephone.valid || telephone.pristine" class="alert alert-danger">
+                    Respecter le Format svp : max 13 chiffres min 8chiffres
+                </div>
+
+
+                <span>
+                    <input type="email" #email="ngModel" required placeholder="Email" name="email" pattern="[a-z0-9._%+-]+@[a-z0-9.-]+.[a-z]{2,4}$" ngModel>
+                </span>
+                <div style="font-size: 10px;margin-top: 10px; color: rgb(247, 12, 12);" [hidden]="email.valid || email.pristine" class="alert alert-danger">
+                    Respecter le Format svp : xxx@yyyyy.com  min 4 caracteres max 10 caracteres
+                </div>
+
+
+                <span>
+                    <input type="text"  placeholder="Login" name="login" #login="ngModel" pattern="[A-Za-z].{4,10}" required ngModel>
                 </span>
                 <div style="font-size: 10px;margin-top: 10px; color: rgb(247, 12, 12);" [hidden]="login.valid || login.pristine" class="alert alert-danger">
-                    Respecter le Format svp : exemple Azer14.  min 6 caracteres max 8 caracteres
+                    Respecter le Format svp : aAzZ  min 4 caracteres max 10 caracteres
                 </div>
+
 
                 <span>
                     <input type="text"  required placeholder="Mot de pase" name="motdepasse" #motdepasse="ngModel" pattern="(?=.*\d)(?=.*[a-z])(?=.*[A-Z]).{6,8}"  ngModel id="pass">

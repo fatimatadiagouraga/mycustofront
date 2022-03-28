@@ -1,0 +1,45 @@
+button{
+  margin: 10px auto;
+  display: block;
+  width: 150px;
+  height: 40px;
+  border-radius: 10px;
+}
+ion-img{
+  width: 130px;
+  height: 120px;
+  margin: 40px auto;
+}
+.btn1{
+  background: orange;
+}
+.btn2{
+  background: rgb(0, 0, 0);
+}
+.btn1:hover{
+  background: rgb(94, 93, 91);
+}
+.btn2:hover{
+  background: rgb(94, 93, 91);
+}
+.titleMenu {
+  text-align: center;
+   margin: 20px 0px 0px 0px;
+  font-family: Impact, sans-serif;
+  font-size: 25px;
+  letter-spacing: 2px;
+  background: linear-gradient(90deg, rgb(250, 125, 7), rgb(0, 0, 0), #000);
+  background-repeat: no-repeat;
+  background-size: 80%;
+  animation: animate 3s infinite;
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: rgba(255, 255, 255, 0);
+}
+@keyframes animate {
+  0% {
+    background-position: -500%;
+  }
+  100% {
+    background-position: 500%;
+  }
+}

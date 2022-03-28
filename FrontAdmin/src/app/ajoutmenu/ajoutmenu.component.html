@@ -27,29 +27,20 @@
         <form  #datamenus="ngForm"  (ngSubmit)="ajoutmenu(datamenus)"
         class="form" >
                
-                <input type="text" placeholder="NomMenu" name="nom_menu" ngModel>
-            
-                <input type="text" placeholder="Description" name="description_menu" ngModel>
+                <input type="text" #nom_menu="ngModel" pattern="[A-Za-z]{2,20}" placeholder="NomMenu" name="nom_menu" ngModel>
+                <div style="font-size: 10px;margin-top: 10px; color: rgb(247, 12, 12);" [hidden]="nom_menu.valid || nom_menu.pristine" class="alert alert-danger">
+                  Respecter le Format svp : max 20 caracteres
+                </div>
+
+                <input type="text" #description_menu="ngModel" pattern=".{20,255}" placeholder="Description" name="description_menu" ngModel>
+                <div style="font-size: 10px;margin-top: 10px; color: rgb(247, 12, 12);" [hidden]="description_menu.valid || description_menu.pristine" class="alert alert-danger">
+                  Respecter le Format svp :min 20caracteres max 255
+                </div>
 
                 <input type="date" placeholder="Description" name="d" ngModel>
 
-
-
-           
-                <!-- <label >Choisir Jour:</label>
-                <select name="menujour" name="menujour" style="color: black;padding: 5px;" class="jour" ngModel>
-                    <option  value="">--Choisir un jour--</option>
-                    <option value="Lundi">Lundi</option>                  
-                    <option value="Mardi">Mardi</option>                  
-                    <option value="Mercredi">Mercredi</option>                  
-                    <option value="Jeudi">Jeudi</option>                  
-                    <option value="Vendredi">Vendredi</option>                  
-                    <option value="Samedi">Samedi</option>                  
-                    <option value="Dimanche">Dimanche</option> 
-                                     
-                </select>  -->
                 <div style="display: flex;justify-content: center;">
-                  <button type="submit" style="background-color: black;color: white;">Ajouter</button>
+                  <button type="submit" [disabled]="datamenus.form.invalid" style="background-color: black;color: white;">Ajouter</button>
                 </div>
            
             <div>

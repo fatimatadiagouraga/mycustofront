@@ -1,0 +1,103 @@
+<app-header></app-header>
+<app-sidemenu></app-sidemenu>
+  <div class="page-wrapper">
+    <div class="page-breadcrumb bg-white">
+      <div class="row align-items-center">
+        <div class="col-lg-3 col-md-4 col-sm-4 col-xs-12">
+          <h4 class="page-title" style="font-size: 18px;">ACCUEIL</h4>
+        </div>
+        <div class="col-lg-9 col-sm-8 col-md-8 col-xs-12">
+          <div class="d-md-flex">
+            <ol class="breadcrumb ms-auto">
+              <li><a href="#" class="fw-normal text-success" style="font-weight: bold;">PUBLIER UNE ANNONCE</a></li>
+            </ol>
+  
+          </div>
+        </div>
+      </div>
+      <!-- /.col-lg-12 -->
+    </div>
+    <div class="container-fluid">
+
+<div>
+    <div style="margin-bottom: 5%;margin-top: 5%;" *ngIf="user?.profil==='superadmin'">
+        <h1 style="text-align: center;font-weight: bold;">   Les administrateurs</h1>
+        
+        <table mat-table class="mat-elevation-z8 demo-table">
+         
+          <ng-container matColumnDef="position" *ngFor="let admin of admins">
+           <tr >
+              <td  style="font-size: 20px;padding: 10px 10px;border-bottom: 4px solid white;">{{admin.nom}}</td>
+              <td  style="font-size: 20px;padding: 10px 10px;border-bottom: 4px solid white;">{{admin.prenom}}</td>
+              <td  style="font-size: 20px;padding: 10px 10px;border-bottom: 4px solid white;">{{admin.telephone}}</td>
+              <td>
+                <p class="icon" style="font-size: 20px;padding: 20px 20px;border-bottom: 4px solid white;" (click)="restaureAdmin(admin.id_admin)">
+                    <i class=" fas fa-arrow-alt-circle-up" aria-hidden="true" style="font-size: 15px;color: orange;" >restaurer</i><br>
+                </p>
+              </td>
+           </tr>   
+        </ng-container>
+        
+        </table>
+        </div>
+        
+        <div class="row" style="margin-bottom:5% ;margin-top: 5%;">
+            <h1 style="text-align: center;font-weight: bold;">Les menus</h1>
+         <mat-card class="example-card" *ngFor="let menu of menus" >
+            <p class="icon" (click)="restaureMenu(menu.id_menu)">
+                <i class=" fas fa-arrow-alt-circle-up" aria-hidden="true" style="font-size: 15px;color: orange;"  >restaurer</i><br>
+        
+            </p>
+            <mat-card-title-group>
+              <mat-card-title>{{menu.menujour}}</mat-card-title>
+              <mat-card-subtitle>{{menu.d}}</mat-card-subtitle>
+             
+            </mat-card-title-group>
+            <mat-card-content>
+                {{menu.description_menu}}
+            </mat-card-content>
+          </mat-card>
+        </div>
+        
+        <div>
+            <h1 style="text-align: center;font-weight: bold;">Les plats</h1>
+        <div class="container">
+        
+            <div class="row">
+                <!-- <h1 style="text-align: center;">Plat</h1> -->
+                <mat-card class="col-md-3 " *ngFor="let plat of plats">
+                  <mat-card-header>
+                    <div style="margin-left: 10px; font-weight: bold;">{{plat.menu.nom_menu}}  {{plat.menu.d}}</div>
+                   
+        
+                    <p class="icon" (click)="restaurePlat(plat.id_plat)">
+                    <i class=" fas fa-arrow-alt-circle-up" aria-hidden="true" style="font-size: 15px;color: orange;" >restaurer</i><br>
+                    </p>
+        
+                    <mat-card-title style="color: black;font-weight: bold;">{{plat.nom_plat}}</mat-card-title>
+                    <mat-card-subtitle style="color: black;font-weight: bold;">{{plat.prix_plat}} FCFA</mat-card-subtitle>
+                    
+                  </mat-card-header>
+                  <img src="{{image}}  {{plat.id_plat}}" alt="" srcset="" class="image"><br>
+                  
+                  <mat-card-content>
+                    
+                    <p><strong>Les ingredients :</strong>  {{plat.ingredients}}</p>
+                    <p style="font-size: medium;font-weight: 100;margin-top: 10%;">
+                      {{plat.description}} 
+                    </p>
+                  </mat-card-content>
+                 
+                 </mat-card>
+                
+                
+              </div>
+          </div>
+        </div>
+        
+</div>
+    </div>
+  </div>
+  
+
+

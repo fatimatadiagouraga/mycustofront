@@ -1,0 +1,69 @@
+<ion-header>
+  <ion-toolbar color="warning">
+    <ion-title></ion-title>
+  </ion-toolbar>
+</ion-header>
+<ion-content fullscreen="true">
+  <form  #client="ngForm"  (ngSubmit)="InsCl(client)" novalidate autocomplete="off" >
+      <ion-item>
+        <ion-label position="floating">Nom</ion-label>
+        <ion-input class="input1" #nom="ngModel" pattern="[A-Za-z]{2,20}" type="text" name="nom"  ngModel></ion-input>
+      </ion-item>
+      <div style="font-size: 6px; color: orangered;" [hidden]="nom.valid || nom.pristine" class="alert alert-danger">
+        Respecter le Format svp : max 20 caracteres
+    </div>
+      
+      <ion-item>
+        <ion-label position="floating">Prenom</ion-label>
+        <ion-input type="text"  #prenom="ngModel" pattern="[A-Za-z]{2,20}" name="prenom" ngModel></ion-input>
+      </ion-item>
+      <div style="font-size: 6px; color: orangered;" [hidden]="prenom.valid || prenom.pristine" class="alert alert-danger">
+        Respecter le Format svp : max 20 caracteres
+    </div>
+
+      <ion-item>
+        <ion-label position="floating" >Email</ion-label>
+        <ion-input pattern="[a-z0-9._%+-]+@[a-z0-9.-]+.[a-z]{2,4}$" #email="ngModel" type="email" name="email" ngModel></ion-input>
+      </ion-item>
+      <div style="font-size: 6px; color: orangered;" [hidden]="email.valid || email.pristine" class="alert alert-danger">
+        Respecter le Format svp : xxx@yyyyy.com  min 4 caracteres max 10 caracteres
+    </div>
+      
+
+      <ion-item>
+        <ion-label position="floating">Tel</ion-label>
+        <ion-input required #telephone="ngModel" pattern="[0-9]{8,14}" type="phone" name="telephone" ngModel></ion-input>
+      </ion-item>
+      <div style="font-size: 6px; color: orangered;" [hidden]="telephone.valid || telephone.pristine" class="alert alert-danger">
+        Respecter le Format svp : max 13 chiffres min 8chiffres
+    </div>
+
+      <ion-item>
+        <ion-label position="floating">Mot de passe</ion-label>
+        <ion-input required #motdepasse="ngModel" pattern=".{4,10}" type="password" name="motdepasse" ngModel></ion-input>
+      </ion-item>
+      <div   style="font-size: 6px; color: orangered;" [hidden]="motdepasse.valid || motdepasse.pristine" class="alert alert-danger">
+        Respecter le Format svp : exemple Azer14.  min 6 caracteres max 8 caracteres
+    </div>
+
+      <ion-item>
+        <ion-label position="floating">Login</ion-label>
+        <ion-input required #login="ngModel" pattern=".{4,10}" type="text" name="login" ngModel></ion-input>
+      </ion-item>
+      <div style="font-size: 6px; color: orangered;" [hidden]="login.valid || login.pristine" class="alert alert-danger">
+        Respecter le Format svp : allo  min 4 caracteres max 10 caracteres 
+    </div>
+
+      <ion-item>
+        <ion-label position="floating">Adresse</ion-label>
+        <ion-input  #adresse="ngModel" pattern=".{3,30}" type="text" name="adresse" ngModel></ion-input>
+      </ion-item>
+      <div style="font-size: 6px; color:orangered;" [hidden]="adresse.valid || adresse.pristine" class="alert alert-danger">
+        Respecter le Format svp : min 3 max 30 caracteres
+    </div>
+    <div style="display: flex;justify-content: center;">
+      <button type="submit" class="btn" style="margin-top: 2px;padding: 10px 0px;background-color: orangered;" >S'inscrire</button>
+    </div>
+   
+  </form>
+</ion-content>

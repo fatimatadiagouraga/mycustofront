@@ -1,0 +1,52 @@
+<ion-header>
+  <ion-toolbar color="warning">
+    <ion-title></ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content >
+
+ <div>
+    <div style="display: block;justify-content: center;">
+   
+      <ion-card class="example-card"  *ngFor="let item of commandeEncours" >
+        <p class="titleMenu" style="float: right;">Encours</p>
+        
+        <ion-card-subtitle style="margin-left: 5px;">{{item.date}}</ion-card-subtitle>
+       
+        <ion-card-content>
+        
+          <p>Liste Commande :</p>
+          <p *ngFor="let list of item.panierList" style="color: rgb(3, 3, 3);"> -->
+            {{list.plat.nom_plat}}   {{list.quantite}} 
+          </p>
+          <h3 style="color: black;">Montant : {{item.montant}} FCFA</h3>
+        </ion-card-content>
+        
+        <button type="submit" (click)="valider(item.idCommande)" style="float: right;margin: 5px 5px;">Valider</button>
+        
+      </ion-card>
+    </div>
+ </div>
+  <div>
+    <div style="display: block;justify-content: center;">
+     
+      <div style="background-color: orange;">
+        <h2 style="text-align: center;"> Mes livrées</h2>
+        <ion-card class="example-card2"  *ngFor="let item of commandeLivrer" style="margin-left: 12px;margin-top: 5%;">
+          <ion-card-subtitle style="margin-left: 5px;">{{item.date}}</ion-card-subtitle>
+          <ion-card-content>         
+            <p>Liste Commande :</p>
+            <p *ngFor="let list of item.panierList" style="color: orange;"> -->
+              {{list.plat.nom_plat}}   {{list.quantite}} 
+            </p>
+            <h3 style="color: black;">Montant : {{item.montant}} FCFA</h3>
+          </ion-card-content>        
+          <button type="submit" style="float: right;margin-bottom: 3px;margin-right: 5px;background-color: orange;" (click)="supprimer(item.idCommande)">Supprimer</button>        
+        </ion-card>
+      </div>
+      
+    </div>
+  </div>
+
+</ion-content>
