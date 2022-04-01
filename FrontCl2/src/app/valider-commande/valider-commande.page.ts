@@ -22,6 +22,14 @@ export class ValiderCommandePage implements OnInit {
     toast.present();
   }
 
+  async present2Toast() {
+    const toast = await this.toastController.create({
+      message: 'merci de mettre au moins un plat',
+      duration: 2000
+    });
+    toast.present();
+  }
+
   ngOnInit() {
     this.client= JSON.parse(localStorage.getItem('Info'));
     this.panierclient();
@@ -37,10 +45,16 @@ export class ValiderCommandePage implements OnInit {
  }
 
   ajoutCommande(){
-    let a = JSON.stringify(this.commande);  
+    let a = JSON.stringify(this.commande);
+    
     return this.service.ajoutcommande(JSON.parse(a),this.client.id_client).subscribe(data =>{
-      this.presentToast()
-      console.log(data);   
+      if(data){
+        this.presentToast()
+      console.log(data); 
+      }else{
+        this.present2Toast()
+      }
+       
     })
   }
 }

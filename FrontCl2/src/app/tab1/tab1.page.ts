@@ -143,6 +143,7 @@ export class Tab1Page implements OnInit {
   panier : any;
   liste1: any;
   exist : boolean
+  listee: any;
 
   constructor(
     private toastController: ToastController,
@@ -161,10 +162,12 @@ export class Tab1Page implements OnInit {
 
   ajouter(id_plat: any, platpanier: any) {
     
-    // this.services.deselectPlat(this.client.id_client,id_plat).subscribe(data =>{
-    //   if(data){
-    //     return this.presentAlert();
-    //   }else{
+    this.services.deselectPlat(this.client.id_client,id_plat).subscribe(data =>{
+      console.log('Data : ', data['length']);
+      
+      if(data['length'] !== 0){
+        return this.presentAlert();
+      }else{
         return this.services.ajoutpanier(id_plat, this.client.id_client, platpanier).subscribe((data) => {
           this.panier = data
           console.log(this.panier.client.id_client);
@@ -172,7 +175,8 @@ export class Tab1Page implements OnInit {
           this.presentToast('Ajouter au panier avec succès');
         });
       }
-      
+    })
+  }
       
     
   

@@ -20,29 +20,35 @@
     <div class="container-fluid">
 
 
-<body>
+<body style="background-color: rgb(238, 240, 241);">
     <div style="padding-top: 5%;">  
 
       <i class=" fas fa-plus" aria-hidden="true" style="font-size: 20px;color: orange;float:right" routerLink="/ajoutPlat">Ajouter</i>
       
       <h1 style="text-align: center;font-weight: bold;">Liste des plats</h1> 
     </div>
-
+    <div style="margin-bottom: 20px;" >
+      <input type="text" [(ngModel)]="term" style="width: 200px;border-radius: 30px;border-color: orange; " placeholder="Recherche">
+    </div>
     <div class="container">
       <div class="row">
           <!-- <h1 style="text-align: center;">Plat</h1> -->
-          <mat-card class="col-md-3 " *ngFor="let plat of listplat">
+          <mat-card class="col-md-3 " *ngFor="let plat of listplat|filter:term">
+            <h3 style="margin-left: 20px;font-weight: bold;"> {{plat.menu.nom_menu}}  {{plat.menu.d}} </h3>
             <mat-card-header>
+              
+              
               <p class="icon">
               <i class="fas fa-pencil-alt" aria-hidden="true" style="font-size: 20px;color: orange;" (click)="btnmodif(plat.id_plat)"></i><br>
-                
-                <!-- <mat-icon style="color: orange;" (click)="btnmodif(plat.id_plat)" >create</mat-icon><br><br> -->
-              <i class=" fas fa-trash-alt" aria-hidden="true" style="font-size: 20px;color: red;" (click)="SuppPlat(plat.id_plat)"></i>
-
-                <!-- <mat-icon style="color: red;" (click)="SuppPlat(plat.id_plat)">delete</mat-icon> -->
+              <i class=" fas fa-trash-alt" aria-hidden="true" style="font-size: 20px;color: red;" (click)="onConfirm(plat.id_plat)"></i>
               </p>
+              
               <mat-card-title>{{plat.nom_plat}}</mat-card-title>
               <mat-card-subtitle>{{plat.prix_plat}} FCFA</mat-card-subtitle>
+             
+              
+             
+              
               
             </mat-card-header>
             <img src="{{image}}  {{plat.id_plat}}" alt="" srcset="" class="image"><br>

@@ -19,9 +19,9 @@
                 {{Plat?.nom_plat}}
               </div><br><br>
               <div class="nom" style="color: black;font-weight: bold;text-align: center;font-size: large;width: 100%;">
-                {{Plat?.prix_plat}}
+                {{Plat?.prix_plat}}FCFA
               </div><br>
-              <h5 style="color: rgb(243, 236, 236);">{{Plat?.ingredients}}</h5>
+              <h5 style="color: rgb(243, 236, 236);margin-left: 10px;">{{Plat?.ingredients}}</h5>
               <ion-img src="../assets/Images/commander.png" class="commander"  style="height: 40px;width: 40px;" (click)="ajouter(l.id_plat, l)"></ion-img>
               <!-- <input type="number" placeholder="0" style="width: 50px;float: right;"> -->
             </ion-card>

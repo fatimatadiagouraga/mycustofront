@@ -16,6 +16,7 @@ import { PlatComponent } from './plat/plat.component';
 import { PlatParMenuComponent } from './plat-par-menu/plat-par-menu.component';
 import { CorbeilleComponent } from './corbeille/corbeille.component';
 
+
 const routes: Routes = [
   {path:"", component:LoginComponent},
   {path:'acceuil', component:AcceuilComponent},

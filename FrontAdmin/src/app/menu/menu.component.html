@@ -20,7 +20,7 @@
     <div class="container-fluid">
 
 
-<body >
+<body style="background-color: rgba(245, 241, 241, 0.774);">
   <div style="padding-top: 10px;margin-top: 10%;">
     
   <i class=" fas fa-plus" aria-hidden="true" style="font-size: 20px;color: orange;float:right" routerLink="/ajoutMenu">Ajouter</i>
@@ -36,7 +36,7 @@
                 <i class="fas fa-pencil-alt" aria-hidden="true" style="font-size: 20px;color: orange;" (click)="menuparid(menu.id_menu)"></i><br>
 
                     <!-- <mat-icon style="color: orange;" (click)="menuparid(menu.id_menu)">create</mat-icon><br> -->
-                <i class=" fas fa-trash-alt" aria-hidden="true" style="font-size: 20px;color: red;" (click)="supmenu(menu.id_menu)"></i>
+                <i class=" fas fa-trash-alt" aria-hidden="true" style="font-size: 20px;color: red;" (click)="onConfirm(menu.id_menu)"></i>
 
                     <!-- <mat-icon style="color: red;" (click)="supmenu(menu.id_menu)">delete</mat-icon> -->
               </p><br>

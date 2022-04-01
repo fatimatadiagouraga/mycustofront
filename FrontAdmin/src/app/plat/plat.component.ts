@@ -3,6 +3,7 @@ import { MatDialog } from '@angular/material/dialog';
 import { ActivatedRoute } from '@angular/router';
 import { ModifierplatComponent } from '../modifierplat/modifierplat.component';
 import { ServiceService } from '../services/service.service';
+import swal from 'sweetalert2'
 
 @Component({
   selector: 'app-plat',
@@ -19,6 +20,8 @@ export class PlatComponent implements OnInit {
   boiterecup:any;
 
   image:any;
+
+  term="";
 
   ngOnInit(): void {
 
@@ -56,6 +59,37 @@ export class PlatComponent implements OnInit {
    
     );
     
+  }
+
+  onConfirm(id:any){
+    swal.fire({
+      title: 'Attention !!!',
+        text: "Voulez-vous supprimer cet plat ?",
+        icon: 'warning',
+        showCancelButton: true,
+        showCloseButton:false,
+        confirmButtonColor: '#060606',
+        cancelButtonColor: '#F9780C',
+        confirmButtonText: 'Je supprime '
+}).then((result) => {
+  if (result.value) {
+    this. SuppPlat(id);
+    swal.fire(
+      'Supprimer!',
+      'Plat est supprimé avec succès.',
+      'warning'
+    )
+  } else if (
+    /* Read more about handling dismissals below */
+    result.dismiss === swal.DismissReason.cancel
+  ) {
+    swal.fire(
+      'Annuler',
+      'Vous avez annulé la suppression',
+      'error'
+    )
+  }
+    })
   }
 
 }

@@ -1,6 +1,6 @@
 <app-header></app-header>
 <app-sidemenu></app-sidemenu>
-  <div class="page-wrapper">
+  <div class="page-wrapper" style="background-color: white;">
     <div class="page-breadcrumb bg-white">
       <div class="row align-items-center">
         <div class="col-lg-3 col-md-4 col-sm-4 col-xs-12">
@@ -26,10 +26,14 @@
 
   <h1 style="text-align: center;font-weight: bold;">   Les administrateurs</h1>
 
-  <table mat-table class="mat-elevation-z8 demo-table">
+  <table mat-table class="mat-elevation-z8 demo-table" style="background-color: rgb(235, 236, 236);" >
+ <div style="margin-bottom: 20px;" >
+  <input type="text" [(ngModel)]="term" style="width: 200px;border-radius: 30px;border-color: orange; " placeholder="Recherche">
+ </div>
+    
    
-    <ng-container matColumnDef="position" *ngFor="let admin of administrateurs">
-     <tr >
+    <ng-container matColumnDef="position" *ngFor="let admin of administrateurs|filter:term">
+     <tr style="background-color: rgb(226, 229, 231);" >
         <td  style="font-size: 20px;padding: 20px 20px;border-bottom: 4px solid white;">{{admin.nom}}</td>
         <td  style="font-size: 20px;padding: 20px 20px;border-bottom: 4px solid white;">{{admin.prenom}}</td>
         <td  style="font-size: 20px;padding: 20px 20px;border-bottom: 4px solid white;">{{admin.telephone}}</td>
@@ -42,7 +46,7 @@
         </td>
         <td>
             <div class="icon">
-              <i class=" fas fa-trash-alt" aria-hidden="true" style="font-size: 20px;color: red;" (click)="SuppAdmin(admin.id_admin)"></i>
+              <i class=" fas fa-trash-alt" aria-hidden="true" style="font-size: 20px;color: red;" (click)="onConfirm(admin.id_admin)"></i>
                  
           
             </div>

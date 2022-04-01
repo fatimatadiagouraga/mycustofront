@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { NgForm } from '@angular/forms';
 import { MatSnackBar } from '@angular/material/snack-bar';
+import { Router } from '@angular/router';
 import { ServiceService } from '../services/service.service';
 
 @Component({
@@ -11,7 +12,7 @@ import { ServiceService } from '../services/service.service';
 export class AjoutmenuComponent implements OnInit {
 
  
-  constructor(private s:ServiceService,public snackbar:MatSnackBar) { }
+  constructor(private s:ServiceService,public snackbar:MatSnackBar,public route:Router) { }
 
   ngOnInit(): void {
   }
@@ -26,5 +27,8 @@ export class AjoutmenuComponent implements OnInit {
     });
     })
     datamenus.reset();
+    this.ngOnInit();
+    this.route.navigate(['/menu'])
 
-}}
+  }
+}

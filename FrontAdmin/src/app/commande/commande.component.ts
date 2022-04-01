@@ -14,6 +14,7 @@ export class CommandeComponent implements OnInit {
   commandes: any;
   Encours:any;
   livrer: any;
+  term=''
 
   constructor(private service:ServiceService,
     private snackbar:MatSnackBar) { }

@@ -39,6 +39,7 @@ export class Tab3Page implements OnInit{
     this.panierclient();
     
 }
+// liste de panier par client
   panierclient(){
      this.service.panierParClient(this.client.id_client).subscribe(datas =>{
       this.panierList=datas;
@@ -63,6 +64,7 @@ export class Tab3Page implements OnInit{
      
     this.service.supprimerPanier(id_panier).subscribe(() =>{
       // this.ngOnInit();
+      this.panierclient();
 
     })
   }

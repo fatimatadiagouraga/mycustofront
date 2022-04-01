@@ -8,7 +8,7 @@
 
 <ion-content >
   
-  <ion-item sty>
+  <ion-item  *ngIf="!tailleListe > 0">
     <div style="position:fixed;width: 85% ;margin-right: 10%; background-color: rgb(245, 244, 244);display: flex;justify-content: center;">
       <button  type="submit" style="background: orange;height: 40px;width: 100%;" routerLink="/valider-commande">Commander</button>
     </div>

@@ -61,7 +61,9 @@ export class AjoutplatComponent implements OnInit {
   
         })
                 dataplat.reset();
+                
                 this.route.navigate(['/plat'])
+                this.ngOnInit();
 
 
 

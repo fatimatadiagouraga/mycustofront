@@ -4,6 +4,7 @@ import { MatSnackBar } from '@angular/material/snack-bar';
 import { ActivatedRoute } from '@angular/router';
 import { ModifieradminComponent } from '../modifieradmin/modifieradmin.component';
 import { ServiceService } from '../services/service.service';
+import swal from 'sweetalert2'
 
 @Component({
   selector: 'app-listadmin',
@@ -13,6 +14,7 @@ import { ServiceService } from '../services/service.service';
 export class ListadminComponent implements OnInit {
   administrateurs: any;
   boiterecup: any;
+  term=''
 
   constructor(private s :ServiceService,
     public snackbar:MatSnackBar,
@@ -60,6 +62,37 @@ export class ListadminComponent implements OnInit {
     
 
   }
+
+  onConfirm(id:any){
+    swal.fire({
+      title: 'Attention !!!',
+        text: "Voulez-vous supprimer cet admin ?",
+        icon: 'warning',
+        showCancelButton: true,
+        showCloseButton:false,
+        confirmButtonColor: '#060606',
+        cancelButtonColor: '#F9780C',
+        confirmButtonText: 'Je supprime '
+}).then((result) => {
+  if (result.value) {
+    this. SuppAdmin(id);
+    swal.fire(
+      'Supprimer!',
+      'Admin est supprimé avec succès.',
+      'warning'
+    )
+  } else if (
+    /* Read more about handling dismissals below */
+    result.dismiss === swal.DismissReason.cancel
+  ) {
+    swal.fire(
+      'Annuler',
+      'Vous avez annulé la suppression',
+      'error'
+    )
   }
+    })
+  }
+}
 
 
