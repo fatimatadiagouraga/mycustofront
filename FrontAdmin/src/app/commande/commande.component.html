@@ -9,29 +9,29 @@
     </div>
     <div class="container-fluid">
 
-    <div style="margin-bottom: 15px;margin-top: 10%;width: 100%;background-color: black; color: rgb(250, 246, 246);font-weight: bold;text-align: center;">Les Commandes En Attentes</div>
+      <div style="margin-top: 10%;">
+        <label for="">Recette du jour</label>
+        <mat-card style="width: 100px;height: 50px;">{{ recette }} FCFA</mat-card>
+      </div>
+
+    <div style="margin-bottom: 15px;margin-top: 5%;width: 100%;background-color: black; color: rgb(250, 246, 246);font-weight: bold;text-align: center;">Les Commandes En Attentes</div>
      <div style="margin-bottom: 20px;" >
       <input type="text" [(ngModel)]="term" style="width: 200px;border-radius: 30px;border-color: orange; " placeholder="Recherche">
      </div>
        <div class="row">
       <mat-card class="example-card" *ngFor="let item of commandes|filter:term">
-        <mat-card-title>N° Commande</mat-card-title>
+        <mat-card-title style="font-size: 12px;font-weight: bold;color: rgb(7, 7, 7);">N°Commande {{item.numero}}</mat-card-title>
         <mat-card-subtitle>{{item.date}}</mat-card-subtitle>
         <mat-card-content>
           <p>Commandé par {{item.client.prenom}} {{item.client.nom}} disponible au <strong>{{item.client.telephone}}</strong> </p>
           <p>Liste Commande :</p>
-          <p *ngFor="let list of item.panierList" style="color: orange;">
+          <p *ngFor="let list of item.panierList" style="color: orange;font-weight: bold;">
             {{list.plat.nom_plat}}   {{list.quantite}} 
           </p>
           <h1 style="color: black;">Montant : {{item.montant}} FCFA</h1>
         </mat-card-content>
         
-          <!-- <mat-radio-group aria-label="Select an option">
-            <mat-radio-button value="1">Attente</mat-radio-button>
-            <mat-radio-button value="2">Encours</mat-radio-button>
-            <mat-radio-button value="3">Livrée</mat-radio-button>
-          </mat-radio-group> -->
-          <button type="submit" (click)="encours(item.idCommande)">Mettre Encours</button>
+        <button type="submit" (click)="encours(item.idCommande)">Mettre Encours</button>
         
       </mat-card>
     </div>
@@ -42,17 +42,24 @@
      </div> 
     <div class="row">
       <mat-card class="example-card" *ngFor="let item of Encours|filter:term">
-        <mat-card-title>N° Commande</mat-card-title>
+        
+        <mat-card-title style="font-size: 12px;font-weight: bold;color: rgb(7, 7, 7);">N°Commande {{item.numero}}</mat-card-title>
         <mat-card-subtitle>{{item.date}}</mat-card-subtitle>
+       
+
+
         <mat-card-content>
           <p>Commandé par {{item.client.prenom}} {{item.client.nom}} disponible au <strong>{{item.client.telephone}}</strong> </p>
           <p>Liste Commande :</p>
-          <p *ngFor="let list of item.panierList" style="color: orange;">
+          <p *ngFor="let list of item.panierList" style="color: orange;font-weight: bold;">
             {{list.plat.nom_plat}}   {{list.quantite}} 
           </p>
-          <h1 style="color: black;">Montant : {{item.montant}} FCFA</h1>
+          <h1 style="font-size: 12px;font-weight: bold;color: rgb(7, 7, 7);">Montant : {{item.montant}} FCFA</h1>
+         
+            
+          
         </mat-card-content>
-        
+        <h4 style="font-weight: bold;"> Encours par:{{item.administrateur.nom}} {{item.administrateur.prenom}} {{item.administrateur.telephone}}</h4>
       </mat-card>
     </div>
 
@@ -62,16 +69,17 @@
      </div>   
     <div class="row">
       <mat-card class="example-card" *ngFor="let item of livrer|filter:term">
-        <mat-card-title>N° Commande</mat-card-title>
+        <mat-card-title style="font-size: 12px;font-weight: bold;color: rgb(7, 7, 7);">N°Commande {{item.numero}}</mat-card-title>
         <mat-card-subtitle>{{item.date}}</mat-card-subtitle>
         <mat-card-content>
           <p>Commandé par {{item.client.prenom}} {{item.client.nom}} disponible au <strong>{{item.client.telephone}}</strong> </p>
           <p>Liste Commande :</p>
-          <p *ngFor="let list of item.panierList" style="color: orange;">
+          <p *ngFor="let list of item.panierList" style="color: orange;font-weight: bold;">
             {{list.plat.nom_plat}}   {{list.quantite}} 
           </p>
-          <h1 style="color: black;">Montant : {{item.montant}} FCFA</h1>
+          <h1 style="font-size: 12px;font-weight: bold;color: rgb(7, 7, 7);">Montant : {{item.montant}} FCFA</h1>
         </mat-card-content>
+        <h4 style="font-weight: bold;"> Traitée par:{{item.administrateur.nom}} {{item.administrateur.prenom}} {{item.administrateur.telephone}}</h4>
         
       </mat-card>
     </div>

@@ -24,8 +24,7 @@
   <mat-icon routerLink="/menu">cancel</mat-icon>
     <div>
         <h1 style="text-align: center;color: black;font-weight: bold;">Ajouter Menu</h1>
-        <form  #datamenus="ngForm"  (ngSubmit)="ajoutmenu(datamenus)"
-        class="form" >
+        <form  #datamenus="ngForm"  (ngSubmit)="ajoutmenu(datamenus)" class="form" autocomplete="off">
                
                 <input type="text" #nom_menu="ngModel" pattern="[A-Za-z]{2,20}" placeholder="NomMenu" name="nom_menu" ngModel>
                 <div style="font-size: 10px;margin-top: 10px; color: rgb(247, 12, 12);" [hidden]="nom_menu.valid || nom_menu.pristine" class="alert alert-danger">

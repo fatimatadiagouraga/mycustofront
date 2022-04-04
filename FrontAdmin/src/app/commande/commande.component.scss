@@ -4,10 +4,13 @@
     -moz-box-sizing: border-box;
 }
 .example-card{
+    display: block;
+    justify-content: start;
     margin-bottom: 15px;
-     margin-right: 2%;
-     margin-left: 2%;
-     width: 20%;
+     margin-right: 1%;
+     margin-left: 1%;
+     width: 31%;
+    
      background-color: white; 
 
 }

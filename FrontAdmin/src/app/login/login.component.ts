@@ -15,6 +15,8 @@ export class LoginComponent implements OnInit {
   constructor(private service:ServiceService,public route:Router,public snack:MatSnackBar) { }
 
   ngOnInit(): void {
+
+    
   }
   onLogin(form :NgForm){
     this.service.login1(form.value["login"],form.value["motdepasse"],form.value).subscribe((res)=>{

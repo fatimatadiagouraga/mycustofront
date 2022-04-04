@@ -100,8 +100,8 @@ export class ServiceService {
 
 
 //mettre commandes Encours (button)
-CommandeEncours(id_commande:any){
-  return this.http.delete(this.apiCommande+'encours'+'/'+id_commande);
+CommandeEncours(id_commande:any,id_admin:any){
+  return this.http.delete(this.apiCommande+'encours'+'/'+id_commande+'/'+id_admin);
 }
 
 
@@ -116,7 +116,9 @@ ListeCommandeLivrées(){
   return this.http.get(this.apiCommande+'commandeLivre');
 }
 
-
+recette(){
+  return this.http.get(this.apiCommande+'recette');
+}
 
 
 

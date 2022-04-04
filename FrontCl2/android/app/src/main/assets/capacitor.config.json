@@ -1,0 +1,6 @@
+{
+	"appId": "io.ionic.starter",
+	"appName": "FrontCl",
+	"webDir": "www",
+	"bundledWebRuntime": false
+}

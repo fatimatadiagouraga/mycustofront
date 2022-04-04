@@ -21,7 +21,7 @@
   <mat-icon (click)="close()">cancel</mat-icon>
     <div>
         <h1 style="text-align: center;color: black;font-weight: bold;">Modification </h1>
-        <form [formGroup]="monPlat" (submit)="modifplat()" class="form">
+        <form [formGroup]="monPlat" (submit)="modifplat()" class="form" autocomplete="off">
             <div>
                 <label for="">Nom</label>
                 <input type="text" formControlName="nom_plat">

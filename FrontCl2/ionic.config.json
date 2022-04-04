@@ -1,11 +1,13 @@
 {
   "name": "FrontCl",
-  "integrations": {},
+  "integrations": {
+    "capacitor": {}
+  },
   "type": "angular",
   "proxies": [
     {
       "path": "/endpoints",
       "proxyUrl": "http://localhost:8100"
     }
-      ]
+  ]
 }

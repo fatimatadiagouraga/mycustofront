@@ -15,24 +15,32 @@ export class CommandeComponent implements OnInit {
   Encours:any;
   livrer: any;
   term=''
+  recette: any;
+  Admin: any;
+  cours: any;
 
   constructor(private service:ServiceService,
     private snackbar:MatSnackBar) { }
 
-  ngOnInit(): void {
+  ngOnInit() {
+
+    // const admin = localStorage.getItem('isLogin');
+    // this.Admin = admin;
+
+    this.recetteDuJour();
     this.liste();
     this.listeCommandeEncours();
     this.listeCommandeLivrer();
     this.data=localStorage.getItem('isLogin');
       this.user=JSON.parse(this.data)
-      console.log(this.user);
-      this.loginStatus = JSON.parse(localStorage['loginStatus']);
+      // console.log(this.user);
+      // this.loginStatus = JSON.parse(localStorage['loginStatus']);
   }
 //liste de commande en attente
   liste(){
     this.service.liste().subscribe(data =>{
       this.commandes= data;
-      console.log(this.commandes);
+      // console.log(this.commandes);
       
     })
 
@@ -40,9 +48,13 @@ export class CommandeComponent implements OnInit {
 
 //button mettre en cours commande
   encours(id_commande:any){
-     this.service.CommandeEncours(id_commande).subscribe(data =>{
+     this.service.CommandeEncours(id_commande,this.user.id_admin).subscribe(data =>{
+       this.cours=data;
+      //  console.log(this.cours)
       this.snackbar.open('Encours','X', {
         duration: 3000
+       
+        
       });
         this.ngOnInit();
      })
@@ -59,7 +71,16 @@ export class CommandeComponent implements OnInit {
   listeCommandeLivrer(){
     this.service.ListeCommandeLivrées().subscribe(data =>{
       this.livrer= data;
-      console.log(this.commandes);
+      // console.log(this.commandes);
+      
+    })
+
+  }
+
+  recetteDuJour(){
+    this.service.recette().subscribe(data =>{
+      this.recette= data;
+      // console.log(this.recette);
       
     })
 
