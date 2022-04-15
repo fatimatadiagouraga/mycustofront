@@ -27,8 +27,9 @@ export class AjoutmenuComponent implements OnInit {
     });
     })
     datamenus.reset();
+    
+    this.route.navigate(['/menu']);
     this.ngOnInit();
-    this.route.navigate(['/menu'])
 
   }
 }

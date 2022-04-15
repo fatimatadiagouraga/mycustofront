@@ -9,9 +9,20 @@
     </div>
     <div class="container-fluid">
 
-      <div style="margin-top: 10%;">
-        <label for="">Recette du jour</label>
-        <mat-card style="width: 100px;height: 50px;">{{ recette }} FCFA</mat-card>
+      <div style="margin-top: 15%;display: flex;width: 100%;">
+        <div style="width: 50%;">
+          <label for="">Recette du jour</label>
+          <mat-card style="width: 150px;height: 80px;">{{ recette }} FCFA</mat-card>
+        </div>
+        <div style="width: 50%;margin-left: 20%;display: block;justify-content: center;">
+          <label for="">Recette a une date donnée</label>
+          <form #data="ngForm" (ngSubmit)="recettes(data)">
+            <input type="date" name="date" id="" name="date" ngModel>
+            <button type="submit" style="margin-left: 10px;margin-top: 5px;background-color: rgb(10, 10, 10);color: white;width: 120px;">Recherche</button>
+          </form>
+          <mat-card style="width: 120px;height: 50px;margin-top: 10px;">{{recetteDate}} FCFA</mat-card>
+        </div>
+        
       </div>
 
     <div style="margin-bottom: 15px;margin-top: 5%;width: 100%;background-color: black; color: rgb(250, 246, 246);font-weight: bold;text-align: center;">Les Commandes En Attentes</div>

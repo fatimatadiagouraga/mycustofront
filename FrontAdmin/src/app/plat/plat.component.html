@@ -34,16 +34,16 @@
       <div class="row">
           <!-- <h1 style="text-align: center;">Plat</h1> -->
           <mat-card class="col-md-3 " *ngFor="let plat of listplat|filter:term">
-            <h3 style="margin-left: 20px;font-weight: bold;"> {{plat.menu.nom_menu}}  {{plat.menu.d}} </h3>
+            <h3 style="margin-left: 10px;font-weight: bold;"> {{plat.menu.nom_menu}}  {{plat.menu.d}} </h3>
             <mat-card-header>
               
               
               <p class="icon">
-              <i class="fas fa-pencil-alt" aria-hidden="true" style="font-size: 20px;color: orange;" (click)="btnmodif(plat.id_plat)"></i><br>
-              <i class=" fas fa-trash-alt" aria-hidden="true" style="font-size: 20px;color: red;" (click)="onConfirm(plat.id_plat)"></i>
+              <i class="fas fa-pencil-alt" aria-hidden="true" style="font-size: 15px;color: orange;" (click)="btnmodif(plat.id_plat)"></i><br>
+              <i class=" fas fa-trash-alt" aria-hidden="true" style="font-size: 15px;color: red;" (click)="onConfirm(plat.id_plat)"></i>
               </p>
               
-              <mat-card-title>{{plat.nom_plat}}</mat-card-title>
+              <mat-card-title style="font-size: medium;">{{plat.nom_plat}}</mat-card-title>
               <mat-card-subtitle>{{plat.prix_plat}} FCFA</mat-card-subtitle>
              
               

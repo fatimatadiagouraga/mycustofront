@@ -52,18 +52,22 @@ export class AjoutplatComponent implements OnInit {
       this.md = data;
       this.platr.menu = this.md;
 
-
+     
+      
       this.service.ModifPlat(this.platr.id_plat, this.platr).subscribe((dt:any) =>{  
-        console.log(dt);
+        console.log('tttttttttttttttttttttttttttttt',dt);
         this.snackbar.open('Ajouter avec succès','!!!', {
                duration: 3000
            });
+
+           dataplat.reset();
+            //window.location.reload();
+
+           this.route.navigateByUrl('plat',{skipLocationChange:true}).then(()=>
+           this.route.navigate(['/plat']));
   
         })
-                dataplat.reset();
-                
-                this.route.navigate(['/plat'])
-                this.ngOnInit();
+               
 
 
 

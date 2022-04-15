@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { Router } from '@angular/router';
 import { ToastController } from '@ionic/angular';
 import { ServicesService } from '../Services/services.service';
 import { Commande } from '../tab3/commande.model';
@@ -13,7 +14,7 @@ export class ValiderCommandePage implements OnInit {
   panierList:any;
   commande: Commande = new Commande();
 
-  constructor(public toastController: ToastController, public service : ServicesService) { }
+  constructor(public toastController: ToastController, public service : ServicesService, private route : Router) { }
   async presentToast() {
     const toast = await this.toastController.create({
       message: 'PAYEMENT EFFECTUE AVEC SUCCES',
@@ -50,7 +51,8 @@ export class ValiderCommandePage implements OnInit {
     return this.service.ajoutcommande(JSON.parse(a),this.client.id_client).subscribe(data =>{
       if(data){
         this.presentToast()
-      console.log(data); 
+      console.log(data);
+      this.route.navigate(['tabs/tabs/tab1']) 
       }else{
         this.present2Toast()
       }

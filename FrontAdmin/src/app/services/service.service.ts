@@ -67,11 +67,17 @@ export class ServiceService {
     return this.http.delete(this.apiPlat+'supprimerPlat/'+id);
   }
 
-  //services menus
+  //services menus 
   //.......................................................
   listemenu(){
     return this.http.get(this.apiMenu+'listeMenu');
   }
+  
+  listemenuAuj(){
+    return this.http.get(this.apiMenu+'listeMenuAuj');
+  }
+
+
   //Plats par menu
   listePlatMenu(id_menu:any){
     return this.http.get('http://localhost:8080/mycustoapi/plat/listParMenu/'+id_menu);
@@ -115,9 +121,15 @@ ListeCommandeEncours(){
 ListeCommandeLivrées(){
   return this.http.get(this.apiCommande+'commandeLivre');
 }
-
+//Recette du jour
 recette(){
   return this.http.get(this.apiCommande+'recette');
+}
+
+//Recette d'une date donnée
+//Recette du jour
+recettes(date:any){
+  return this.http.get(this.apiCommande+'recettes' +'/'+date);
 }
 
 

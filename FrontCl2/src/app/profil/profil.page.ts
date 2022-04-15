@@ -32,8 +32,8 @@ export class ProfilPage implements OnInit {
   supprimer(id_client:any){
     this.s.supprimerCpte(this.client.id_client).subscribe(data =>{
       this.logOut();
-      this.presentToast('supprimer avec succes');
       this.router.navigate(['/login']);
+      this.presentToast('Votre compte a été supprimé');
 
     })
   }

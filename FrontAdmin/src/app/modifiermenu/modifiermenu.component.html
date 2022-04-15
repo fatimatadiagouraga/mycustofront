@@ -21,7 +21,7 @@
       <div>
         <mat-icon (click)="close()">cancel</mat-icon>
         <h1 style="text-align: center;color: black;font-weight: bold;">Modification Menu</h1>
-        <form class="form" #data="ngForm" (onSubmit)="modifmenu(data)" autocomplete="off">
+        <form class="form" #datas="ngForm" (ngSubmit)="modifmenu(datas)" autocomplete="off">
           <div>
             <label for=""></label>
             <input type="text" placeholder="Nom_menu" ngModel name="nom_menu" [(ngModel)]="menu.nom_menu"
@@ -38,8 +38,7 @@
               [(ngModel)]="menu.d" style="color: black;">
           </div>
           <div>
-            <button type="submit"
-              style="background-color: black;color: aliceblue; padding: 10px 20px;margin: 20px 120px;">Modifier</button>
+            <button type="submit" style="background-color: black;color: aliceblue; padding: 10px 20px;margin: 20px 120px;">Modifier</button>
           </div>
         </form>
       </div>

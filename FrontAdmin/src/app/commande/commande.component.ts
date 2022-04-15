@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { NgForm } from '@angular/forms';
 import { MatSnackBar } from '@angular/material/snack-bar';
 import { ServiceService } from '../services/service.service';
 
@@ -18,6 +19,7 @@ export class CommandeComponent implements OnInit {
   recette: any;
   Admin: any;
   cours: any;
+  recetteDate: any;
 
   constructor(private service:ServiceService,
     private snackbar:MatSnackBar) { }
@@ -81,6 +83,15 @@ export class CommandeComponent implements OnInit {
     this.service.recette().subscribe(data =>{
       this.recette= data;
       // console.log(this.recette);
+      
+    })
+
+  }
+
+  recettes(data: NgForm){
+    this.service.recettes(data.value.date).subscribe(data =>{
+      this.recetteDate= data;
+      console.log(this.recetteDate);
       
     })
 

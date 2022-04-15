@@ -2,6 +2,7 @@ import { Component, Inject, OnInit } from '@angular/core';
 import { MatDialog, MAT_DIALOG_DATA } from '@angular/material/dialog';
 import { ServiceService } from '../services/service.service';
 import { MatSnackBar } from '@angular/material/snack-bar';
+import { NgForm } from '@angular/forms';
 
 @Component({
   selector: 'app-modifiermenu',
@@ -21,10 +22,9 @@ export class ModifiermenuComponent implements OnInit {
     
   }
 
-  modifmenu(menu:any){
-    console.log("ok");
+  modifmenu(datas:NgForm){
     
-    return this.service.modifmenu(this.menu.id_menu , menu.value).subscribe(data =>{
+    return this.service.modifmenu(this.menu.id_menu , datas.value).subscribe(data =>{
       console.log(data);
 
       this.snackbar.open('Modifié avec succès','!!!', {
